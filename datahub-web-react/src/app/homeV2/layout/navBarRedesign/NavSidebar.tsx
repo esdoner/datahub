@@ -14,6 +14,7 @@ import {
 import React, { useContext, useEffect } from 'react';
 import styled, { useTheme } from 'styled-components';
 
+import { useTranslation } from 'react-i18next';
 import { useUserContext } from '@app/context/useUserContext';
 import { useNavBarContext } from '@app/homeV2/layout/navBarRedesign/NavBarContext';
 import NavBarHeader from '@app/homeV2/layout/navBarRedesign/NavBarHeader';
@@ -77,6 +78,7 @@ const MenuWrapper = styled.div`
 `;
 
 export const NavSidebar = () => {
+    const { t } = useTranslation()
     const entityRegistry = useEntityRegistry();
     const themeConfig = useTheme();
 
@@ -131,7 +133,7 @@ export const NavSidebar = () => {
             {
                 type: NavBarMenuItemTypes.Group,
                 key: 'govern',
-                title: 'Govern',
+                title: t('Govern'),
                 items: [
                     {
                         type: NavBarMenuItemTypes.Item,

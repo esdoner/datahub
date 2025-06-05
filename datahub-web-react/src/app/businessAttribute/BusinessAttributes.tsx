@@ -5,6 +5,7 @@ import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+import { useTranslation } from 'react-i18next'
 import BusinessAttributeItemMenu from '@app/businessAttribute/BusinessAttributeItemMenu';
 import CreateBusinessAttributeModal from '@app/businessAttribute/CreateBusinessAttributeModal';
 import useDescriptionRenderer from '@app/businessAttribute/utils/useDescriptionRenderer';
@@ -70,6 +71,7 @@ const searchBarInputStyle = {
 const DEFAULT_PAGE_SIZE = 10;
 
 export const BusinessAttributes = () => {
+    const {t} = useTranslation()
     const [isCreatingBusinessAttribute, setIsCreatingBusinessAttribute] = useState(false);
     const entityRegistry = useEntityRegistry();
 
@@ -142,7 +144,7 @@ export const BusinessAttributes = () => {
     const tableColumns = [
         {
             width: '20%',
-            title: 'Name',
+            title: t('Name'),
             dataIndex: ['properties', 'name'],
             key: 'name',
             render: (name: string, record: any) => (
@@ -150,7 +152,7 @@ export const BusinessAttributes = () => {
             ),
         },
         {
-            title: 'Description',
+            title: t('Description'),
             dataIndex: ['properties', 'description'],
             key: 'description',
             width: '20%',
@@ -159,7 +161,7 @@ export const BusinessAttributes = () => {
         },
         {
             width: '20%',
-            title: 'Tags',
+            title: t('Tags'),
             dataIndex: ['properties', 'tags'],
             key: 'tags',
             render: tagRenderer,
@@ -167,7 +169,7 @@ export const BusinessAttributes = () => {
         },
         {
             width: '20%',
-            title: 'Glossary Terms',
+            title: t('Glossary Terms'),
             dataIndex: ['properties', 'glossaryTags'],
             key: 'glossaryTags',
             render: termRenderer,
@@ -175,13 +177,13 @@ export const BusinessAttributes = () => {
         },
         {
             width: '13%',
-            title: 'Data Type',
+            title: t('Data Type'),
             dataIndex: ['properties', 'businessAttributeDataType'],
             key: 'businessAttributeDataType',
             render: (dataType: string) => dataType || '',
         },
         {
-            title: '',
+            title: t(''),
             dataIndex: '',
             width: '5%',
             align: 'right' as AlignType,

@@ -22,6 +22,7 @@
             "@components": ["./src/alchemy-components"],
             "@components/*": ["./src/alchemy-components/*"],
             "@app/*": ["./src/app/*"],
+            "@i18n/*": ["./src/i18n/*"],
             "@conf": ["./src/conf"],
             "@conf/*": ["./src/conf/*"],
             "@graphql/*": ["./src/graphql/*"],
