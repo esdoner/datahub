@@ -24,6 +24,7 @@ import { useEntityRegistry } from '@app/useEntityRegistry';
 
 import { useListPoliciesQuery } from '@graphql/policy.generated';
 import { AndFilterInput, FilterOperator, Policy, PolicyState } from '@types';
+import { t } from '@src/i18n/utils';
 
 const SourceContainer = styled.div`
     overflow: auto;
@@ -216,7 +217,7 @@ export const ManagePolicies = () => {
 
     const tableColumns = [
         {
-            title: 'Name',
+            title: t('Name'),
             dataIndex: 'name',
             key: 'name',
             render: (_, record: any) => {
@@ -231,7 +232,7 @@ export const ManagePolicies = () => {
             },
         },
         {
-            title: 'Type',
+            title: t('Type'),
             dataIndex: 'type',
             key: 'type',
             render: (type: string) => {
@@ -240,13 +241,13 @@ export const ManagePolicies = () => {
             },
         },
         {
-            title: 'Description',
+            title: t('Description'),
             dataIndex: 'description',
             key: 'description',
             render: (description: string) => description || '',
         },
         {
-            title: 'Actors',
+            title: t('Actors'),
             dataIndex: 'actors',
             key: 'actors',
             render: (_, record: any) => {
@@ -267,7 +268,7 @@ export const ManagePolicies = () => {
             },
         },
         {
-            title: 'State',
+            title: t('State'),
             dataIndex: 'state',
             key: 'state',
             render: (state: string) => {

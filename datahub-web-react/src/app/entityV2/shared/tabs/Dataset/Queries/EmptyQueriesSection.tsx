@@ -10,6 +10,8 @@ import AddButton from '@app/entityV2/shared/tabs/Dataset/Queries/AddButton';
 
 import NoDocs from '@images/no-docs.svg';
 
+import { t } from '@i18n/utils'
+
 const StyledEmpty = styled(Empty)`
     display: flex;
     gap: 10px;
@@ -94,7 +96,7 @@ export default function EmptyQueriesSection({
             </div>
             <ContentContainer>
                 <LeftContainer>
-                    <StyledEmpty description={<Description>No highlighted queries yet</Description>} image={NoDocs} />
+                    <StyledEmpty description={<Description>{t("No highlighted queries yet")}</Description>} image={NoDocs} />
                 </LeftContainer>
                 <RightContainer>
                     {showButton && (

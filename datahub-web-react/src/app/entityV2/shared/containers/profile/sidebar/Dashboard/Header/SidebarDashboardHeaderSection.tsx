@@ -9,6 +9,7 @@ import SidebarTopUsersHeaderSection from '@app/entityV2/shared/containers/profil
 import { getDashboardPopularityTier, userExists } from '@app/entityV2/shared/containers/profile/sidebar/shared/utils';
 import { SidebarStatsColumn, getPopularityColumn } from '@app/entityV2/shared/containers/profile/utils';
 import { formatNumber, formatNumberWithoutAbbreviation } from '@app/shared/formatNumber';
+import { t } from '@src/i18n/utils';
 
 const StatContent = styled.div`
     color: ${REDESIGN_COLORS.FOUNDATION_BLUE_4};
@@ -43,7 +44,7 @@ const SidebarDashboardHeaderSection = () => {
         dashboard?.statsSummary?.topUsersLast30Days?.find((user) => userExists(user))
     ) {
         columns.push({
-            title: 'Top Users',
+            title: t('Top Users'),
             content: <SidebarTopUsersHeaderSection />,
         });
     }
@@ -53,7 +54,7 @@ const SidebarDashboardHeaderSection = () => {
      */
     if (dashboard?.statsSummary?.queryCountLast30Days) {
         columns.push({
-            title: 'Queries',
+            title: t('Queries'),
             content: <StatContent>{formatNumber(dashboard?.statsSummary?.queryCountLast30Days)} queries</StatContent>,
         });
     }
@@ -63,7 +64,7 @@ const SidebarDashboardHeaderSection = () => {
      */
     if (dashboard?.statsSummary?.uniqueUserCountLast30Days) {
         columns.push({
-            title: 'Users',
+            title: t('Users'),
             content: (
                 <StatContent>{formatNumber(dashboard?.statsSummary?.uniqueUserCountLast30Days)} users</StatContent>
             ),
@@ -75,7 +76,7 @@ const SidebarDashboardHeaderSection = () => {
      */
     if (dashboard?.statsSummary?.viewCountLast30Days) {
         columns.push({
-            title: 'Recent Views',
+            title: t('Recent Views'),
             content: (
                 <Tooltip
                     showArrow={false}
@@ -94,7 +95,7 @@ const SidebarDashboardHeaderSection = () => {
      */
     if (dashboard?.statsSummary?.viewCount) {
         columns.push({
-            title: 'Total Views',
+            title: t('Total Views'),
             content: (
                 <Tooltip
                     showArrow={false}

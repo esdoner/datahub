@@ -2,13 +2,14 @@ import { Typography } from 'antd';
 import React from 'react';
 
 import { OnboardingStep } from '@app/onboarding/OnboardingStep';
+import { t } from '@src/i18n/utils';
 
 export const ROLES_INTRO_ID = 'roles-intro';
 
 export const RolesOnboardingConfig: OnboardingStep[] = [
     {
         id: ROLES_INTRO_ID,
-        title: 'Roles',
+        title: t('Roles'),
         content: (
             <Typography.Paragraph>
                 <p>

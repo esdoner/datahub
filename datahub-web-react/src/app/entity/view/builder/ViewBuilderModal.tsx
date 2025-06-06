@@ -8,6 +8,7 @@ import { DEFAULT_BUILDER_STATE, ViewBuilderState } from '@app/entity/view/types'
 import ClickOutside from '@app/shared/ClickOutside';
 import { Button } from '@src/alchemy-components';
 import { getModalDomContainer } from '@utils/focus';
+import { t } from '@src/i18n/utils';
 
 const modalWidth = 700;
 const modalStyle = { top: 40 };
@@ -53,7 +54,7 @@ export const ViewBuilderModal = ({ mode, urn, initialState, onSubmit, onCancel }
 
     const confirmClose = () => {
         Modal.confirm({
-            title: 'Exit View Editor',
+            title: t('Exit View Editor'),
             content: `Are you sure you want to exit View editor? All changes will be lost`,
             onOk() {
                 onCancel?.();

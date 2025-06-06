@@ -9,6 +9,7 @@ import SampleValueTag from '@app/entityV2/shared/tabs/Dataset/Stats/snapshot/Sam
 import { downgradeV2FieldPath } from '@src/app/entityV2/dataset/profile/schema/utils/utils';
 
 import { DatasetFieldProfile, Maybe, PartitionSpec, PartitionType } from '@types';
+import { t } from '@src/i18n/utils';
 
 type Props = {
     columnStats: Array<DatasetFieldProfile>;
@@ -83,52 +84,52 @@ export default function ColumnStats({ columnStats, partitionSpec }: Props) {
         // Optional columns. Defines how to render a column given a value exists somewhere in the profile.
         const optionalColumns: ColumnsType<any> = [
             {
-                title: 'Min',
+                title: t('Min'),
                 dataIndex: 'min',
                 render: (value) => value || unknownValue(),
             },
             {
-                title: 'Max',
+                title: t('Max'),
                 dataIndex: 'max',
                 render: (value) => value || unknownValue(),
             },
             {
-                title: 'Mean',
+                title: t('Mean'),
                 dataIndex: 'mean',
                 render: (value) => value || unknownValue(),
             },
             {
-                title: 'Median',
+                title: t('Median'),
                 dataIndex: 'median',
                 render: (value) => value || unknownValue(),
             },
             {
-                title: 'Null Count',
+                title: t('Null Count'),
                 dataIndex: 'nullCount',
                 render: (value) => value || unknownValue(),
             },
             {
-                title: 'Null %',
+                title: t('Null %'),
                 dataIndex: 'nullPercentage',
                 render: (value) => value || unknownValue(),
             },
             {
-                title: 'Distinct Count',
+                title: t('Distinct Count'),
                 dataIndex: 'distinctCount',
                 render: (value) => value || unknownValue(),
             },
             {
-                title: 'Distinct %',
+                title: t('Distinct %'),
                 dataIndex: 'distinctPercentage',
                 render: (value) => value || unknownValue(),
             },
             {
-                title: 'Std. Dev',
+                title: t('Std. Dev'),
                 dataIndex: 'stdev',
                 render: (value) => value || unknownValue(),
             },
             {
-                title: 'Sample Values',
+                title: t('Sample Values'),
                 dataIndex: 'sampleValues',
                 render: (sampleValues: Array<string>) => {
                     return (
@@ -145,7 +146,7 @@ export default function ColumnStats({ columnStats, partitionSpec }: Props) {
         // Name column always required.
         const requiredColumns: ColumnsType<any> = [
             {
-                title: 'Name',
+                title: t('Name'),
                 dataIndex: 'name',
                 render: (value) => <NameText>{value}</NameText>,
                 ellipsis: true,

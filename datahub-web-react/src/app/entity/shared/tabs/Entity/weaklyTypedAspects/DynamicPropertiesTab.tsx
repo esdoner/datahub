@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { StyledTable } from '@app/entity/shared/components/styled/StyledTable';
 import { ANTD_GRAY } from '@app/entity/shared/constants';
 import TableValueElement from '@app/entity/shared/tabs/Entity/weaklyTypedAspects/TableValueElement';
+import { t } from '@src/i18n/utils';
 
 type Props = {
     payload: string | undefined | null;
@@ -23,14 +24,14 @@ export default function DynamicTabularTab({ payload: rawPayload }: Props) {
     const propertyTableColumns = [
         {
             width: 210,
-            title: 'Name',
+            title: t('Name'),
             dataIndex: 'key',
             sorter: (a, b) => a?.key?.localeCompare(b?.key || '') || 0,
             defaultSortOrder: 'ascend',
             render: (name: string) => <NameText>{name}</NameText>,
         },
         {
-            title: 'Value',
+            title: t('Value'),
             dataIndex: 'value',
             render: (value: string) => <TableValueElement value={value} />,
         },

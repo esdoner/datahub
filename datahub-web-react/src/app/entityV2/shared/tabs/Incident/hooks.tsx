@@ -14,12 +14,13 @@ import { AlignmentOptions } from '@src/alchemy-components/theme/config';
 import { getTimeFromNow } from '@src/app/shared/time/timeUtils';
 import { useEntityRegistryV2 } from '@src/app/useEntityRegistry';
 import { CorpUser, EntityPrivileges, IncidentType } from '@src/types.generated';
+import { t } from '@src/i18n/utils';
 
 export const useIncidentsTableColumns = (refetch: () => void, privileges?: EntityPrivileges) => {
     return useMemo(() => {
         const columns = [
             {
-                title: 'Name',
+                title: t('Name'),
                 dataIndex: 'name',
                 key: 'name',
                 render: (record) =>
@@ -34,7 +35,7 @@ export const useIncidentsTableColumns = (refetch: () => void, privileges?: Entit
                 },
             },
             {
-                title: 'Stage',
+                title: t('Stage'),
                 dataIndex: 'stage',
                 key: 'stage',
                 render: (record) =>
@@ -46,7 +47,7 @@ export const useIncidentsTableColumns = (refetch: () => void, privileges?: Entit
                 width: '15%',
             },
             {
-                title: 'Category',
+                title: t('Category'),
                 dataIndex: 'type',
                 key: 'type',
                 render: (record) => {
@@ -67,7 +68,7 @@ export const useIncidentsTableColumns = (refetch: () => void, privileges?: Entit
                 width: '12%',
             },
             {
-                title: 'Opened',
+                title: t('Opened'),
                 dataIndex: 'created',
                 key: 'created',
                 render: (record) => {
@@ -79,9 +80,9 @@ export const useIncidentsTableColumns = (refetch: () => void, privileges?: Entit
                 width: '12%',
             },
             {
-                title: 'Assets',
+                title: t('Assets'),
                 dataIndex: 'linkedAssets',
-                tooltipTitle: 'Linked Assets',
+                tooltipTitle: t('Linked Assets'),
                 key: 'linkedAssets',
                 width: '9%',
                 render: (record) =>
@@ -95,7 +96,7 @@ export const useIncidentsTableColumns = (refetch: () => void, privileges?: Entit
                 },
             },
             {
-                title: 'Assignees',
+                title: t('Assignees'),
                 dataIndex: 'assignees',
                 key: 'assignees',
                 width: '12%',

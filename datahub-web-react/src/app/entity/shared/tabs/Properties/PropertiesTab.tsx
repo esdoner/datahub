@@ -16,6 +16,7 @@ import {
     mapCustomPropertiesToPropertyRows,
 } from '@app/entity/shared/tabs/Properties/utils';
 import { useEntityRegistry } from '@app/useEntityRegistry';
+import { t } from '@src/i18n/utils';
 
 const StyledTable = styled(Table)`
     &&& .ant-table-cell-with-append {
@@ -31,12 +32,12 @@ export const PropertiesTab = () => {
     const propertyTableColumns = [
         {
             width: '40%',
-            title: 'Name',
+            title: t('Name'),
             defaultSortOrder: 'ascend',
             render: (propertyRow: PropertyRow) => <NameColumn propertyRow={propertyRow} filterText={filterText} />,
         },
         {
-            title: 'Value',
+            title: t('Value'),
             render: (propertyRow: PropertyRow) => <ValuesColumn propertyRow={propertyRow} filterText={filterText} />,
         },
     ];

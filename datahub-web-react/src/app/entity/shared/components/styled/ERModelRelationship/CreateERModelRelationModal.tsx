@@ -24,6 +24,7 @@ import { useGetSearchResultsQuery } from '@graphql/search.generated';
 import { EntityType, ErModelRelationship, OwnerEntityType } from '@types';
 
 import arrow from '@images/Arrow.svg';
+import { t } from '@src/i18n/utils';
 
 type Props = {
     table1?: any;
@@ -292,7 +293,7 @@ export const CreateERModelRelationModal = ({
             editable: true,
         },
         {
-            title: 'Action',
+            title: t('Action'),
             dataIndex: '',
             editable: false,
             render: (record) =>

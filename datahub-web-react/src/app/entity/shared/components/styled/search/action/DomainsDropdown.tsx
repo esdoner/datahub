@@ -6,6 +6,7 @@ import { SetDomainModal } from '@app/entity/shared/containers/profile/sidebar/Do
 import { handleBatchError } from '@app/entity/shared/utils';
 
 import { useBatchSetDomainMutation } from '@graphql/mutations.generated';
+import { t } from '@src/i18n/utils';
 
 type Props = {
     urns: Array<string>;
@@ -49,13 +50,13 @@ export default function DomainsDropdown({ urns, disabled = false, refetch }: Pro
                 name="Domain"
                 actions={[
                     {
-                        title: 'Set Domain',
+                        title: t('Set Domain'),
                         onClick: () => {
                             setIsEditModalVisible(true);
                         },
                     },
                     {
-                        title: 'Unset Domain',
+                        title: t('Unset Domain'),
                         onClick: () => {
                             Modal.confirm({
                                 title: `If you continue, Domain will be removed for the selected assets.`,

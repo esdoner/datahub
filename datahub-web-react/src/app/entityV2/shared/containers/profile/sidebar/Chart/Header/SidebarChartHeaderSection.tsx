@@ -9,6 +9,7 @@ import SidebarTopUsersHeaderSection from '@app/entityV2/shared/containers/profil
 import { getChartPopularityTier, userExists } from '@app/entityV2/shared/containers/profile/sidebar/shared/utils';
 import { SidebarStatsColumn, getPopularityColumn } from '@app/entityV2/shared/containers/profile/utils';
 import { formatNumber, formatNumberWithoutAbbreviation } from '@app/shared/formatNumber';
+import { t } from '@src/i18n/utils';
 
 const StatContent = styled.div`
     color: ${REDESIGN_COLORS.FOUNDATION_BLUE_4};
@@ -43,7 +44,7 @@ const SidebarChartHeaderSection = () => {
         chart?.statsSummary?.topUsersLast30Days?.find((user) => userExists(user))
     ) {
         columns.push({
-            title: 'Top Users',
+            title: t('Top Users'),
             content: <SidebarTopUsersHeaderSection />,
         });
     }
@@ -53,7 +54,7 @@ const SidebarChartHeaderSection = () => {
      */
     if (chart?.statsSummary?.queryCountLast30Days) {
         columns.push({
-            title: 'Queries',
+            title: t('Queries'),
             content: <StatContent>{formatNumber(chart?.statsSummary?.queryCountLast30Days)} queries</StatContent>,
         });
     }
@@ -63,7 +64,7 @@ const SidebarChartHeaderSection = () => {
      */
     if (chart?.statsSummary?.uniqueUserCountLast30Days) {
         columns.push({
-            title: 'Users',
+            title: t('Users'),
             content: <StatContent>{formatNumber(chart?.statsSummary?.uniqueUserCountLast30Days)} users</StatContent>,
         });
     }
@@ -73,7 +74,7 @@ const SidebarChartHeaderSection = () => {
      */
     if (chart?.statsSummary?.viewCountLast30Days) {
         columns.push({
-            title: 'Recent Views',
+            title: t('Recent Views'),
             content: (
                 <Tooltip
                     showArrow={false}
@@ -92,7 +93,7 @@ const SidebarChartHeaderSection = () => {
      */
     if (chart?.statsSummary?.viewCount) {
         columns.push({
-            title: 'Total Views',
+            title: t('Total Views'),
             content: (
                 <Tooltip
                     showArrow={false}

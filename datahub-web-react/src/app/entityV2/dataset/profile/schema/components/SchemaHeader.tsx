@@ -11,6 +11,7 @@ import TabToolbar from '@app/entityV2/shared/components/styled/TabToolbar';
 import { SchemaFilterType } from '@app/entityV2/shared/tabs/Dataset/Schema/utils/filterSchemaRows';
 
 import { SemanticVersionStruct } from '@types';
+import { t } from '@i18n/utils';
 
 const StyledTabToolbar = styled(TabToolbar)`
     height: unset;
@@ -176,7 +177,7 @@ export default function SchemaHeader({
                             isPrimary
                         />
                     )}
-                    <Tooltip title={schemaAuditToggleText} showArrow={false}>
+                    <Tooltip title={t(schemaAuditToggleText)} showArrow={false}>
                         <Button
                             variant="text"
                             data-testid="schema-blame-button"

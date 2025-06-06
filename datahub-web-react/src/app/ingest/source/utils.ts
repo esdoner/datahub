@@ -7,6 +7,7 @@ import {
     WarningOutlined,
 } from '@ant-design/icons';
 import YAML from 'yamljs';
+import { t } from '@src/i18n/utils';
 
 import EntityRegistry from '@app/entity/EntityRegistry';
 import { ANTD_GRAY, REDESIGN_COLORS } from '@app/entity/shared/constants';
@@ -172,7 +173,7 @@ const transformToStructuredReport = (structuredReportObj: any): StructuredReport
     ): StructuredReportLogEntry[] => {
         return Object.entries(items).map(([rawMessage, context]) => ({
             level,
-            title: 'An unexpected issue occurred',
+            title: t('An unexpected issue occurred'),
             message: rawMessage,
             context,
         }));

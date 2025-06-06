@@ -133,7 +133,7 @@ export class DatasetEntity implements Entity<Dataset> {
                     },
                 },
                 {
-                    name: 'Documentation',
+                    name: 'Documentations',
                     component: DocumentationTab,
                 },
                 {

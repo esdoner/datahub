@@ -30,6 +30,7 @@ import { colors } from '@src/alchemy-components';
 import { useEntityData } from '@src/app/entity/shared/EntityContext';
 
 import { EditableSchemaMetadata, SchemaField, SchemaMetadata, UsageQueryResult } from '@types';
+import { t } from '@src/i18n/utils';
 
 const TableContainer = styled.div<{ isSearchActive: boolean; hasRowWithDepth: boolean }>`
     overflow: inherit;
@@ -226,7 +227,7 @@ export default function SchemaTable({
     const fieldColumn = {
         fixed: 'left' as FixedType,
         width: 200,
-        title: 'Name',
+        title: t('Name'),
         dataIndex: 'fieldPath',
         key: 'fieldPath',
         render: schemaTitleRenderer,
@@ -238,7 +239,7 @@ export default function SchemaTable({
 
     const typeColumn = {
         width: 100,
-        title: 'Type',
+        title: t('Type'),
         dataIndex: 'type',
         key: 'type',
         render: schemaTypeRenderer,
@@ -248,7 +249,7 @@ export default function SchemaTable({
     const descriptionColumn = {
         ellipsis: true,
         className: 'description-column',
-        title: 'Description',
+        title: t('Description'),
         dataIndex: 'description',
         key: 'description',
         render: descriptionRender,
@@ -259,7 +260,7 @@ export default function SchemaTable({
 
     const tagColumn = {
         width: 100,
-        title: 'Tags',
+        title: t('Tags'),
         dataIndex: 'globalTags',
         key: 'tag',
         render: tagRenderer,
@@ -269,7 +270,7 @@ export default function SchemaTable({
 
     const termColumn = {
         width: 200,
-        title: 'Glossary Terms',
+        title: t('Glossary Terms'),
         dataIndex: 'globalTags',
         key: 'term',
         render: termRenderer,
@@ -289,7 +290,7 @@ export default function SchemaTable({
 
     const usageColumn = {
         width: 100,
-        title: 'Stats',
+        title: t('Stats'),
         dataIndex: 'fieldPath',
         key: 'usage',
         render: usageStatsRenderer,

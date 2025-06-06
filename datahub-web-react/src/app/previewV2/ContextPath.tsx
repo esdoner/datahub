@@ -13,6 +13,7 @@ import { capitalizeFirstLetterOnly } from '@app/shared/textUtil';
 import { useEntityRegistryV2 } from '@app/useEntityRegistry';
 
 import { BrowsePathEntry, BrowsePathV2, Entity, EntityType } from '@types';
+import { t } from '@i18n/utils'
 
 const PlatformContentWrapper = styled.div`
     display: flex;
@@ -140,7 +141,7 @@ function ContextPath(props: Props) {
                     title={capitalizeFirstLetterOnly(type)}
                 >
                     {entityTypeIcon && <TypeIconWrapper>{entityTypeIcon}</TypeIconWrapper>}
-                    <PlatFormTitle $color={color}>{capitalizeFirstLetterOnly(type)}</PlatFormTitle>
+                    <PlatFormTitle $color={color}>{t(capitalizeFirstLetterOnly(type))}</PlatFormTitle>
                     {showEntityTypeDivider && divider}
                 </PlatformText>
             )}

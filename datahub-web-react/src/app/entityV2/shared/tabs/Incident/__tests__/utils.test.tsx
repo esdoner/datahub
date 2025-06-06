@@ -15,19 +15,20 @@ import {
 } from '@app/entityV2/shared/tabs/Incident/utils';
 import { SortingState } from '@src/alchemy-components/components/Table/types';
 import { EntityType } from '@src/types.generated';
+import { t } from '@src/i18n/utils';
 
 describe('Utility Functions', () => {
     test('getFilteredTransformedIncidentData should filter and transform incident data', () => {
         const incidents: any = [
             {
-                title: 'Incident 1',
+                title: t('Incident 1'),
                 status: { stage: 'WorkInProgress' },
                 incidentType: 'DATASET_COLUMN',
                 priority: 'High',
                 type: 'INCIDENT',
             },
             {
-                title: 'Incident 2',
+                title: t('Incident 2'),
                 status: { stage: 'Closed' },
                 incidentType: 'DATASET_COLUMN_1',
                 priority: 'Low',
@@ -64,7 +65,7 @@ describe('Utility Functions', () => {
                 stage: 'Closed',
                 state: undefined,
                 type: 'DATASET_COLUMN_1',
-                title: 'Incident 2',
+                title: t('Incident 2'),
                 priority: 'Low',
                 linkedAssets: undefined,
                 assignees: undefined,
@@ -107,7 +108,7 @@ describe('Utility Functions', () => {
     });
 
     test('getSortedIncidents should sort incidents based on column', () => {
-        const incidents = [{ title: 'B' }, { title: 'A' }];
+        const incidents = [{ title: t('B') }, { title: t('A') }];
         const record = { incidents };
         const sorted = getSortedIncidents(record, { sortColumn: 'name', sortOrder: SortingState.ASCENDING });
         expect(sorted[0].title).toBe('A');
@@ -166,7 +167,7 @@ describe('Utility Functions', () => {
             'DATASET' as EntityType,
         );
         expect(result[0]).toEqual({
-            title: 'BigQuery',
+            title: t('BigQuery'),
             urn: 'urn:li:dataset:main',
             platform: mockEntityData.platform,
             entityType: 'DATASET',
@@ -221,21 +222,21 @@ describe('Utility Functions', () => {
 
         expect(result[0]).toEqual({
             urn: mockEntityData.urn,
-            title: 'BigQuery',
+            title: t('BigQuery'),
             platform: mockEntityData.platform,
             entityType: 'DATASET',
         });
 
         expect(result[1]).toEqual({
             urn: 'urn:li:dataset:(urn:li:dataPlatform:snowflake,my_table1,PROD)',
-            title: 'Snowflake',
+            title: t('Snowflake'),
             platform: mockEntityData.siblingsSearch.searchResults[0].entity.platform,
             entityType: 'DATASET',
         });
 
         expect(result[2]).toEqual({
             urn: 'urn:li:dataset:(urn:li:dataPlatform:redshift,my_table2,PROD)',
-            title: 'Redshift',
+            title: t('Redshift'),
             platform: mockEntityData.siblingsSearch.searchResults[1].entity.platform,
             entityType: 'DATASET',
         });

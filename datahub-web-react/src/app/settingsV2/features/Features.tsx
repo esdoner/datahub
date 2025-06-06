@@ -8,6 +8,7 @@ import {
     useUpdateDocPropagationSettings,
 } from '@app/settingsV2/features/useDocPropagationSettings';
 import { PageTitle } from '@src/alchemy-components';
+import { t } from '@src/i18n/utils';
 
 const Page = styled.div`
     display: flex;
@@ -39,18 +40,18 @@ export const Features = () => {
     const features: FeatureType[] = [
         {
             key: uuidv4(),
-            title: 'Documentation Propagation',
+            title: t('Documentation Propagation'),
             description: 'Automatically propagate documentation from upstream to downstream columns and assets.',
             settings: [
                 {
                     key: uuidv4(),
-                    title: 'Rollback Propagation Changes',
+                    title: t('Rollback Propagation Changes'),
                     isAvailable: false,
                     buttonText: 'Rollback',
                 },
                 {
                     key: uuidv4(),
-                    title: 'Backfill existing documentation from upstream to downstream columns/assets',
+                    title: t('Backfill existing documentation from upstream to downstream columns/assets'),
                     isAvailable: false,
                     buttonText: 'Initialize',
                 },
@@ -58,7 +59,7 @@ export const Features = () => {
             options: [
                 {
                     key: uuidv4(),
-                    title: 'Column Level Propagation',
+                    title: t('Column Level Propagation'),
                     description:
                         'Propagate new documentation from upstream to downstream columns based on column-level lineage relationships.',
                     isAvailable: true,
@@ -72,7 +73,7 @@ export const Features = () => {
                 },
                 {
                     key: uuidv4(),
-                    title: 'Asset Level Propagation',
+                    title: t('Asset Level Propagation'),
                     description:
                         'Propagate new documentation from upstream to downstream assets based on data lineage relationships.',
                     checked: false,

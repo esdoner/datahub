@@ -10,11 +10,11 @@ import {
     TextColumns,
     TrendUp,
     UserCircle,
+    FolderUser,
 } from '@phosphor-icons/react';
 import React, { useContext, useEffect } from 'react';
 import styled, { useTheme } from 'styled-components';
 
-import { useTranslation } from 'react-i18next';
 import { useUserContext } from '@app/context/useUserContext';
 import { useNavBarContext } from '@app/homeV2/layout/navBarRedesign/NavBarContext';
 import NavBarHeader from '@app/homeV2/layout/navBarRedesign/NavBarHeader';
@@ -37,6 +37,7 @@ import { useUpdateEducationStepsAllowList } from '@src/app/onboarding/useUpdateE
 import { useEntityRegistry } from '@src/app/useEntityRegistry';
 import { HelpLinkRoutes, PageRoutes } from '@src/conf/Global';
 import { EntityType } from '@src/types.generated';
+import { t } from '@src/i18n/utils';
 
 import AcrylIcon from '@images/acryl-light-mark.svg?react';
 
@@ -78,7 +79,6 @@ const MenuWrapper = styled.div`
 `;
 
 export const NavSidebar = () => {
-    const { t } = useTranslation()
     const entityRegistry = useEntityRegistry();
     const themeConfig = useTheme();
 
@@ -123,11 +123,20 @@ export const NavSidebar = () => {
         items: [
             {
                 type: NavBarMenuItemTypes.Item,
-                title: 'Home',
+                title: t('Home'),
                 icon: <SquaresFour />,
                 selectedIcon: <SquaresFour weight="fill" />,
                 key: 'home',
                 link: PageRoutes.ROOT,
+                onlyExactPathMapping: true,
+            },
+            {
+                type: NavBarMenuItemTypes.Item,
+                title: t('Workspace'),
+                icon: <FolderUser />,
+                selectedIcon: <FolderUser weight="fill" />,
+                key: 'workspace',
+                link: PageRoutes.WORKSPACE,
                 onlyExactPathMapping: true,
             },
             {
@@ -137,7 +146,7 @@ export const NavSidebar = () => {
                 items: [
                     {
                         type: NavBarMenuItemTypes.Item,
-                        title: 'Glossary',
+                        title: t('Glossary'),
                         key: 'glossary',
                         icon: <BookBookmark />,
                         selectedIcon: <BookBookmark weight="fill" />,
@@ -148,7 +157,7 @@ export const NavSidebar = () => {
                     },
                     {
                         type: NavBarMenuItemTypes.Item,
-                        title: 'Tags',
+                        title: t('Tags'),
                         key: 'tag',
                         icon: <Tag />,
                         selectedIcon: <Tag weight="fill" />,
@@ -156,7 +165,7 @@ export const NavSidebar = () => {
                     },
                     {
                         type: NavBarMenuItemTypes.Item,
-                        title: 'Domains',
+                        title: t('Domains'),
                         key: 'domains',
                         icon: <Globe />,
                         selectedIcon: <Globe weight="fill" />,
@@ -165,7 +174,7 @@ export const NavSidebar = () => {
                     },
                     {
                         type: NavBarMenuItemTypes.Item,
-                        title: 'Structured Properties',
+                        title: t('Structured Properties'),
                         key: 'structuredProperties',
                         isHidden: !showStructuredProperties,
                         icon: <TextColumns />,
@@ -177,11 +186,11 @@ export const NavSidebar = () => {
             {
                 type: NavBarMenuItemTypes.Group,
                 key: 'admin',
-                title: 'Admin',
+                title: t('Admin'),
                 items: [
                     {
                         type: NavBarMenuItemTypes.Item,
-                        title: 'Data Sources',
+                        title: t('Data Sources'),
                         key: 'dataSources',
                         isHidden: !showDataSources,
                         icon: <Plugs />,
@@ -190,7 +199,7 @@ export const NavSidebar = () => {
                     },
                     {
                         type: NavBarMenuItemTypes.Item,
-                        title: 'Analytics',
+                        title: t('Analytics'),
                         icon: <TrendUp />,
                         selectedIcon: <TrendUp weight="fill" />,
                         key: 'analytics',
@@ -206,7 +215,7 @@ export const NavSidebar = () => {
             },
             {
                 type: NavBarMenuItemTypes.Item,
-                title: 'Profile',
+                title: t('Profile'),
                 icon: <UserCircle />,
                 selectedIcon: <UserCircle weight="fill" />,
                 key: 'profile',
@@ -214,7 +223,7 @@ export const NavSidebar = () => {
             },
             {
                 type: NavBarMenuItemTypes.Item,
-                title: 'Settings',
+                title: t('Settings'),
                 icon: <Gear />,
                 selectedIcon: <Gear weight="fill" />,
                 key: 'settings',
@@ -222,21 +231,21 @@ export const NavSidebar = () => {
             },
             {
                 type: NavBarMenuItemTypes.Dropdown,
-                title: 'Help',
+                title: t('Help'),
                 icon: <Question />,
                 selectedIcon: <Question weight="fill" />,
                 key: 'help',
                 items: [
                     {
                         type: NavBarMenuItemTypes.DropdownElement,
-                        title: 'Product Tour',
+                        title: t('Product Tour'),
                         description: 'Take a quick tour of this page',
                         key: 'helpProductTour',
                         onClick: showOnboardingTour,
                     },
                     {
                         type: NavBarMenuItemTypes.DropdownElement,
-                        title: 'GraphQL',
+                        title: t('GraphQL'),
                         description: 'Explore the GraphQL API',
                         link: HelpLinkRoutes.GRAPHIQL || null,
                         isExternalLink: true,
@@ -244,7 +253,7 @@ export const NavSidebar = () => {
                     },
                     {
                         type: NavBarMenuItemTypes.DropdownElement,
-                        title: 'OpenAPI',
+                        title: t('OpenAPI'),
                         description: 'Explore the OpenAPI endpoints',
                         link: HelpLinkRoutes.OPENAPI,
                         isExternalLink: true,
@@ -263,7 +272,7 @@ export const NavSidebar = () => {
             },
             {
                 type: NavBarMenuItemTypes.Item,
-                title: 'Sign out',
+                title: t('Sign out'),
                 icon: <SignOut data-testid="log-out-menu-item" />,
                 key: 'signOut',
                 onClick: logout,

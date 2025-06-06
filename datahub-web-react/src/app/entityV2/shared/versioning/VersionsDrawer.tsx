@@ -19,23 +19,24 @@ import { useSearchAcrossVersionsQuery } from '@graphql/versioning.generated';
 import { FilterOperator } from '@types';
 
 import LinkOut from '@images/link-out.svg?react';
+import { t } from '@src/i18n/utils';
 
 const PAGE_SIZE = 10;
 
 const COLUMNS = [
     {
-        title: 'Name',
+        title: t('Name'),
         dataIndex: 'label',
         key: 'name',
     },
     {
-        title: 'Note',
+        title: t('Note'),
         dataIndex: 'comment',
         key: 'notes',
         width: '200px',
     },
     {
-        title: 'Created',
+        title: t('Created'),
         dataIndex: 'createdAt',
         key: 'created',
     },
@@ -168,11 +169,11 @@ export default function VersionsDrawer({ versionSetUrn, open }: Props) {
                     placement="topRight"
                     sections={[
                         {
-                            title: 'Created in Source',
+                            title: t('Created in Source'),
                             content: moment(versionProperties?.createdInSource?.time).format('MMMM D, YYYY h:mm A'),
                         },
                         {
-                            title: 'Synced to DataHub',
+                            title: t('Synced to DataHub'),
                             content: moment(versionProperties?.created?.time).format('MMMM D, YYYY h:mm A'),
                         },
                     ]}

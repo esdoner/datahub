@@ -23,6 +23,7 @@ import { useAppConfig } from '@app/useAppConfig';
 import { useIsThemeV2 } from '@app/useIsThemeV2';
 import { useShowNavBarRedesign } from '@app/useShowNavBarRedesign';
 import { Button, colors } from '@src/alchemy-components';
+import { t } from '@src/i18n/utils';
 
 const PageContainer = styled.div`
     display: flex;
@@ -116,12 +117,12 @@ export const SettingsPage = () => {
             // Personal Section
             {
                 type: NavBarMenuItemTypes.Group,
-                title: 'Personal',
+                title: t('Personal'),
                 key: 'personal',
                 items: [
                     {
                         type: NavBarMenuItemTypes.Item,
-                        title: 'My Views',
+                        title: t('My Views'),
                         key: 'views',
                         link: `${url}/views`,
                         isHidden: !showViews,
@@ -129,7 +130,7 @@ export const SettingsPage = () => {
                     },
                     {
                         type: NavBarMenuItemTypes.Item,
-                        title: 'My Notifications',
+                        title: t('My Notifications'),
                         key: 'personal-notifications',
                         link: `${url}/personal-notifications`,
                         isHidden: !subscriptionsEnabled,
@@ -137,7 +138,7 @@ export const SettingsPage = () => {
                     },
                     {
                         type: NavBarMenuItemTypes.Item,
-                        title: 'My Subscriptions',
+                        title: t('My Subscriptions'),
                         key: 'personal-subscriptions',
                         link: `${url}/personal-subscriptions`,
                         isHidden: !subscriptionsEnabled,
@@ -148,12 +149,12 @@ export const SettingsPage = () => {
             // Developer Section
             {
                 type: NavBarMenuItemTypes.Group,
-                title: 'Developer',
+                title: t('Developer'),
                 key: 'developer',
                 items: [
                     {
                         type: NavBarMenuItemTypes.Item,
-                        title: 'Access Tokens',
+                        title: t('Access Tokens'),
                         key: 'tokens',
                         link: `${url}/tokens`,
                         isHidden: !showAccessTokens,
@@ -164,12 +165,12 @@ export const SettingsPage = () => {
             // Access Section
             {
                 type: NavBarMenuItemTypes.Group,
-                title: 'Access',
+                title: t('Access'),
                 key: 'access',
                 items: [
                     {
                         type: NavBarMenuItemTypes.Item,
-                        title: 'Users & Groups',
+                        title: t('Users & Groups'),
                         key: 'identities',
                         link: `${url}/identities`,
                         isHidden: !showUsersGroups,
@@ -177,7 +178,7 @@ export const SettingsPage = () => {
                     },
                     {
                         type: NavBarMenuItemTypes.Item,
-                        title: 'Permissions',
+                        title: t('Permissions'),
                         key: 'permissions',
                         link: `${url}/permissions`,
                         isHidden: !showPolicies,
@@ -188,12 +189,12 @@ export const SettingsPage = () => {
             // Manage Section
             {
                 type: NavBarMenuItemTypes.Group,
-                title: 'Manage',
+                title: t('Manage'),
                 key: 'manage',
                 items: [
                     {
                         type: NavBarMenuItemTypes.Item,
-                        title: 'Features',
+                        title: t('Features'),
                         key: 'features',
                         link: `${url}/features`,
                         isHidden: !showFeatures,
@@ -201,7 +202,7 @@ export const SettingsPage = () => {
                     },
                     {
                         type: NavBarMenuItemTypes.Item,
-                        title: 'Home Page',
+                        title: t('Home Page'),
                         key: 'posts',
                         link: `${url}/posts`,
                         isHidden: !showHomePagePosts,
@@ -209,7 +210,7 @@ export const SettingsPage = () => {
                     },
                     {
                         type: NavBarMenuItemTypes.Item,
-                        title: 'Ownership Types',
+                        title: t('Ownership Types'),
                         key: 'ownership',
                         link: `${url}/ownership`,
                         isHidden: !showOwnershipTypes,
@@ -220,12 +221,12 @@ export const SettingsPage = () => {
             // Preferences Section
             {
                 type: NavBarMenuItemTypes.Group,
-                title: 'Preferences',
+                title: t('Preferences'),
                 key: 'preferences',
                 items: [
                     {
                         type: NavBarMenuItemTypes.Item,
-                        title: 'Appearance',
+                        title: t('Appearance'),
                         key: 'preferences',
                         link: `${url}/preferences`,
                         icon: <Wrench />,

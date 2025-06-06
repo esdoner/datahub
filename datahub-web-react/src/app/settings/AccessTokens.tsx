@@ -19,6 +19,7 @@ import { useEntityRegistry } from '@app/useEntityRegistry';
 import { useListAccessTokensQuery, useRevokeAccessTokenMutation } from '@graphql/auth.generated';
 import { useListUsersQuery } from '@graphql/user.generated';
 import { EntityType, FacetFilterInput } from '@types';
+import { t } from '@src/i18n/utils';
 
 const SourceContainer = styled.div`
     width: 100%;
@@ -207,7 +208,7 @@ export const AccessTokens = () => {
     // Revoke token Handler
     const onRemoveToken = (token: any) => {
         Modal.confirm({
-            title: 'Are you sure you want to revoke this token?',
+            title: t('Are you sure you want to revoke this token?'),
             content: `Anyone using this token will no longer be able to access the DataHub API. You cannot undo this action.`,
             onOk() {
                 // Hack to deal with eventual consistency.
@@ -251,19 +252,19 @@ export const AccessTokens = () => {
 
     const tableColumns = [
         {
-            title: 'Name',
+            title: t('Name'),
             dataIndex: 'name',
             key: 'name',
             render: (name: string) => <b>{name}</b>,
         },
         {
-            title: 'Description',
+            title: t('Description'),
             dataIndex: 'description',
             key: 'description',
             render: (description: string) => description || '',
         },
         {
-            title: 'Expires At',
+            title: t('Expires At'),
             dataIndex: 'expiresAt',
             key: 'expiresAt',
             render: (expiresAt: string) => {
@@ -276,7 +277,7 @@ export const AccessTokens = () => {
             },
         },
         {
-            title: 'Owner',
+            title: t('Owner'),
             dataIndex: 'ownerUrn',
             key: 'ownerUrn',
             render: (ownerUrn: string) => {

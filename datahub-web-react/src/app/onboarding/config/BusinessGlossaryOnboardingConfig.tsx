@@ -2,6 +2,7 @@ import { Typography } from 'antd';
 import React from 'react';
 
 import { OnboardingStep } from '@app/onboarding/OnboardingStep';
+import { t } from '@src/i18n/utils';
 
 export const BUSINESS_GLOSSARY_INTRO_ID = 'business-glossary-intro';
 export const BUSINESS_GLOSSARY_CREATE_TERM_ID = 'business-glossary-create-term';
@@ -10,7 +11,7 @@ export const BUSINESS_GLOSSARY_CREATE_TERM_GROUP_ID = 'business-glossary-create-
 export const BusinessGlossaryOnboardingConfig: OnboardingStep[] = [
     {
         id: BUSINESS_GLOSSARY_INTRO_ID,
-        title: 'Business Glossary 📖',
+        title: t('Business Glossary 📖'),
         content: (
             <Typography.Paragraph>
                 <p>
@@ -26,7 +27,7 @@ export const BusinessGlossaryOnboardingConfig: OnboardingStep[] = [
     {
         id: BUSINESS_GLOSSARY_CREATE_TERM_ID,
         selector: `#${BUSINESS_GLOSSARY_CREATE_TERM_ID}`,
-        title: 'Glossary Terms',
+        title: t('Glossary Terms'),
         content: (
             <Typography.Paragraph>
                 <p>
@@ -41,7 +42,7 @@ export const BusinessGlossaryOnboardingConfig: OnboardingStep[] = [
     {
         id: BUSINESS_GLOSSARY_CREATE_TERM_GROUP_ID,
         selector: `#${BUSINESS_GLOSSARY_CREATE_TERM_GROUP_ID}`,
-        title: 'Glossary Term Groups',
+        title: t('Glossary Term Groups'),
         content: (
             <Typography.Paragraph>
                 <p>

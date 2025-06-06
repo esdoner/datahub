@@ -1,5 +1,6 @@
 import { Empty } from 'antd';
 import React from 'react';
+import { t } from '@src/i18n/utils';
 
 import { StyledTable } from '@app/entity/shared/components/styled/StyledTable';
 import {
@@ -22,19 +23,19 @@ type ViewsTableProps = {
 export const ViewsTable = ({ views, onEditView }: ViewsTableProps) => {
     const tableColumns = [
         {
-            title: 'Name',
+            title: t('Name'),
             dataIndex: 'name',
             key: 'name',
             render: (name, record) => <NameColumn name={name} record={record} onEditView={onEditView} />,
         },
         {
-            title: 'Description',
+            title: t('Description'),
             dataIndex: 'description',
             key: 'description',
             render: (description) => <DescriptionColumn description={description} />,
         },
         {
-            title: 'Type',
+            title: t('Type'),
             dataIndex: 'viewType',
             key: 'viewType',
             render: (viewType) => <ViewTypeColumn viewType={viewType} />,

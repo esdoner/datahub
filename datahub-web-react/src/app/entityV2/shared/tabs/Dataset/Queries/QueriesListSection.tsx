@@ -16,6 +16,8 @@ import usePagination, { Pagination } from '@app/sharedV2/pagination/usePaginatio
 import { Sorting } from '@app/sharedV2/sorting/useSorting';
 import { FacetFilterInput } from '@src/types.generated';
 
+import { t } from '@i18n/utils'
+
 const SectionWrapper = styled.div<{ $borderRadiusBottom?: boolean }>`
     background-color: white;
     padding: 24px;
@@ -234,7 +236,7 @@ export default function QueriesListSection({
                 {section === QueriesTabSection.Highlighted && (
                     <AddButton
                         dataTestId="add-query-button"
-                        buttonLabel="Add Highlighted Query"
+                        buttonLabel={t("Add Highlighted Query")}
                         isButtonDisabled={addQueryDisabled}
                         onButtonClick={onAddQuery}
                     />

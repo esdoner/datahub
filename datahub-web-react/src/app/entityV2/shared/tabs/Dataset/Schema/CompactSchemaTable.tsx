@@ -19,6 +19,7 @@ import { useEntityRegistry } from '@app/useEntityRegistry';
 import translateFieldPath from '@src/app/entityV2/dataset/profile/schema/utils/translateFieldPath';
 
 import { EditableSchemaMetadata, EntityType, SchemaField, SchemaMetadata, UsageQueryResult } from '@types';
+import { t } from '@src/i18n/utils';
 
 export type Props = {
     rows: Array<ExtendedSchemaFields>;
@@ -123,7 +124,7 @@ export default function CompactSchemaTable({
     const fieldColumn = {
         fixed: 'left' as FixedType,
         width: 100,
-        title: 'Name',
+        title: t('Name'),
         dataIndex: 'fieldPath',
         key: 'fieldPath',
         className: 'field-column',
@@ -141,7 +142,7 @@ export default function CompactSchemaTable({
     const descriptionColumn = {
         ellipsis: true,
         width: 600,
-        title: 'Description',
+        title: t('Description'),
         dataIndex: 'description',
         key: 'description',
         className: 'description-column',
@@ -169,7 +170,7 @@ export default function CompactSchemaTable({
 
     const usageColumn = {
         width: '100',
-        title: 'Usage',
+        title: t('Usage'),
         dataIndex: 'fieldPath',
         key: 'usage',
         render: usageStatsRenderer,

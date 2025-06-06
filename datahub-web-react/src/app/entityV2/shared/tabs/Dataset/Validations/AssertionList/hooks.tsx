@@ -12,6 +12,7 @@ import { getQueryParams } from '@app/entityV2/shared/tabs/Dataset/Validations/as
 import { REDESIGN_COLORS } from '@src/app/entityV2/shared/constants';
 import { getTimeFromNow } from '@src/app/shared/time/timeUtils';
 import { AssertionResultType, AssertionType } from '@src/types.generated';
+import { t } from '@src/i18n/utils';
 
 const CategoryType = styled.div`
     font-family: Mulish;
@@ -41,7 +42,7 @@ export const useAssertionsTableColumns = ({ groupBy, contract, refetch }) => {
     return useMemo(() => {
         const columns = [
             {
-                title: 'Name',
+                title: t('Name'),
                 dataIndex: 'name',
                 key: 'name',
                 render: (record) => <AssertionName record={record} groupBy={groupBy} contract={contract} />,
@@ -51,7 +52,7 @@ export const useAssertionsTableColumns = ({ groupBy, contract, refetch }) => {
                 },
             },
             {
-                title: 'Category',
+                title: t('Category'),
                 dataIndex: 'type',
                 key: 'type',
                 render: (record) =>
@@ -59,7 +60,7 @@ export const useAssertionsTableColumns = ({ groupBy, contract, refetch }) => {
                 width: '10%',
             },
             {
-                title: 'Last Run',
+                title: t('Last Run'),
                 dataIndex: 'lastEvaluation',
                 key: 'lastEvaluation',
                 render: (record) => {
@@ -71,7 +72,7 @@ export const useAssertionsTableColumns = ({ groupBy, contract, refetch }) => {
                 },
             },
             {
-                title: 'Tags',
+                title: t('Tags'),
                 dataIndex: 'tags',
                 key: 'tags',
                 width: '20%',

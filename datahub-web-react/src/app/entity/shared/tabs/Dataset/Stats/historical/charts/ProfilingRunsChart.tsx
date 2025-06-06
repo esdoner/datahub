@@ -7,6 +7,7 @@ import TableStats from '@app/entity/shared/tabs/Dataset/Stats/snapshot/TableStat
 import { formatBytes, formatNumberWithoutAbbreviation } from '@app/shared/formatNumber';
 
 import { DatasetProfile } from '@types';
+import { t } from '@src/i18n/utils';
 
 export const ChartTable = styled(Table)`
     margin-top: 16px;
@@ -48,7 +49,7 @@ export default function ProfilingRunsChart({ profiles }: Props) {
 
     const tableColumns = [
         {
-            title: 'Date',
+            title: t('Date'),
             key: 'Date',
             dataIndex: 'timestamp',
             render: (title, record, index) => {
@@ -60,17 +61,17 @@ export default function ProfilingRunsChart({ profiles }: Props) {
             },
         },
         {
-            title: 'Row Count',
+            title: t('Row Count'),
             key: 'Row Count',
             dataIndex: 'rowCount',
         },
         {
-            title: 'Column Count',
+            title: t('Column Count'),
             key: 'Column Count',
             dataIndex: 'columnCount',
         },
         {
-            title: 'Size',
+            title: t('Size'),
             key: 'Size',
             dataIndex: 'sizeInBytes',
         },

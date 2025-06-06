@@ -21,6 +21,7 @@ import { Message } from '@app/shared/Message';
 import { scrollToTop } from '@app/shared/searchUtils';
 import { useEntityRegistry } from '@app/useEntityRegistry';
 import { useShowNavBarRedesign } from '@src/app/useShowNavBarRedesign';
+import { t } from '@src/i18n/utils';
 
 import {
     useCreateSecretMutation,
@@ -213,13 +214,13 @@ export const SecretsList = () => {
 
     const tableColumns = [
         {
-            title: 'Name',
+            title: t('Name'),
             dataIndex: 'name',
             key: 'name',
             render: (name: string) => <Typography.Text strong>{name}</Typography.Text>,
         },
         {
-            title: 'Description',
+            title: t('Description'),
             dataIndex: 'description',
             key: 'description',
             render: (description: any) => {

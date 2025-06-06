@@ -104,6 +104,7 @@ export default defineConfig(({ mode }) => {
             host: false,
             port: 3000,
             proxy: proxyOptions,
+            allowedHosts: ['ce8d-180-114-149-29.ngrok-free.app'],
         },
         css: {
             preprocessorOptions: {

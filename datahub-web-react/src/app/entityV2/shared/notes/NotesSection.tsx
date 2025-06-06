@@ -17,6 +17,7 @@ import { COLORS } from '@app/sharedV2/colors';
 
 import { useDeletePostMutation } from '@graphql/post.generated';
 import { Post } from '@types';
+import { t } from '@src/i18n/utils';
 
 const ContentWrapper = styled.div`
     display: flex;
@@ -223,7 +224,7 @@ function SidebarNote({ note, parentUrn, parentSubResource, refetch }: NoteProps)
 
 function onDeleteNote(onDelete: () => void) {
     Modal.confirm({
-        title: 'Delete Note',
+        title: t('Delete Note'),
         content: `Are you sure you want to remove this note?`,
         onOk: onDelete,
         onCancel() {},

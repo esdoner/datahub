@@ -7,6 +7,7 @@ import { ANTD_GRAY } from '@app/entity/shared/constants';
 import { getLastIngestedColor } from '@app/entity/shared/containers/profile/sidebar/LastIngested';
 import { REDESIGN_COLORS } from '@app/entityV2/shared/constants';
 import { toLocalDateString, toRelativeTimeString } from '@app/shared/time/timeUtils';
+import { t } from '@src/i18n/utils';
 
 const LastUpdatedContainer = styled.div<{ color: string }>`
     align-items: center;
@@ -34,15 +35,15 @@ type Props = {
 
 const descriptors = {
     lastModified: {
-        sectionTitle: 'Last Modified',
+        sectionTitle: t('Last Modified'),
         tooltip: 'Last modified',
     },
     lastRefreshed: {
-        sectionTitle: 'Data Last Refreshed',
+        sectionTitle: t('Data Last Refreshed'),
         tooltip: 'Data last refreshed',
     },
     lastUpdated: {
-        sectionTitle: 'Last Updated',
+        sectionTitle: t('Last Updated'),
         tooltip: 'Last updated',
     },
 };

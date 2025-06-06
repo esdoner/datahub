@@ -2,6 +2,7 @@ import { Typography } from 'antd';
 import React from 'react';
 
 import { OnboardingStep } from '@app/onboarding/OnboardingStep';
+import { t } from '@src/i18n/utils';
 
 // Entity profile tabs. Note that the 'rc-tab' prefix for the ID is added by the antd library and may change in the future.
 export const ENTITY_PROFILE_ENTITIES_ID = 'entity-profile-entities';
@@ -21,7 +22,7 @@ export const EntityProfileOnboardingConfig: OnboardingStep[] = [
     {
         id: ENTITY_PROFILE_ENTITIES_ID,
         selector: `[id^='rc-tabs'][id$='Entities']`,
-        title: 'Entities Tab',
+        title: t('Entities Tab'),
         content: (
             <Typography.Paragraph>
                 <p>
@@ -33,7 +34,7 @@ export const EntityProfileOnboardingConfig: OnboardingStep[] = [
     {
         id: ENTITY_PROFILE_PROPERTIES_ID,
         selector: `[id^='rc-tabs'][id$='Properties']`,
-        title: 'Properties Tab',
+        title: t('Properties Tab'),
         content: (
             <Typography.Paragraph>
                 <p>
@@ -49,7 +50,7 @@ export const EntityProfileOnboardingConfig: OnboardingStep[] = [
     {
         id: ENTITY_PROFILE_DOCUMENTATION_ID,
         selector: `[id^='rc-tabs'][id$='Documentation']`,
-        title: 'Documentation Tab',
+        title: t('Documentation Tab'),
         content: (
             <Typography.Paragraph>
                 <p>
@@ -65,7 +66,7 @@ export const EntityProfileOnboardingConfig: OnboardingStep[] = [
     {
         id: ENTITY_PROFILE_LINEAGE_ID,
         selector: `[id^='rc-tabs'][id$='Lineage']`,
-        title: 'Lineage Tab',
+        title: t('Lineage Tab'),
         content: (
             <Typography.Paragraph>
                 <p>
@@ -84,7 +85,7 @@ export const EntityProfileOnboardingConfig: OnboardingStep[] = [
     {
         id: ENTITY_PROFILE_SCHEMA_ID,
         selector: `[id^='rc-tabs'][id$='Schema']`,
-        title: 'Schema Tab',
+        title: t('Schema Tab'),
         content: (
             <Typography.Paragraph>
                 <p>
@@ -100,7 +101,7 @@ export const EntityProfileOnboardingConfig: OnboardingStep[] = [
     {
         id: ENTITY_PROFILE_OWNERS_ID,
         selector: `#${ENTITY_PROFILE_OWNERS_ID}`,
-        title: 'Owners',
+        title: t('Owners'),
         content: (
             <Typography.Paragraph>
                 <p>
@@ -116,7 +117,7 @@ export const EntityProfileOnboardingConfig: OnboardingStep[] = [
     {
         id: ENTITY_PROFILE_TAGS_ID,
         selector: `#${ENTITY_PROFILE_TAGS_ID}`,
-        title: 'Tags',
+        title: t('Tags'),
         content: (
             <Typography.Paragraph>
                 <p>
@@ -139,7 +140,7 @@ export const EntityProfileOnboardingConfig: OnboardingStep[] = [
     {
         id: ENTITY_PROFILE_GLOSSARY_TERMS_ID,
         selector: `#${ENTITY_PROFILE_GLOSSARY_TERMS_ID}`,
-        title: 'Glossary Terms',
+        title: t('Glossary Terms'),
         content: (
             <Typography.Paragraph>
                 <p>
@@ -167,7 +168,7 @@ export const EntityProfileOnboardingConfig: OnboardingStep[] = [
     {
         id: ENTITY_PROFILE_DOMAINS_ID,
         selector: `#${ENTITY_PROFILE_DOMAINS_ID}`,
-        title: 'Domain',
+        title: t('Domain'),
         content: (
             <Typography.Paragraph>
                 <p>
@@ -190,7 +191,7 @@ export const EntityProfileOnboardingConfig: OnboardingStep[] = [
     {
         id: ENTITY_PROFILE_V2_SIDEBAR_ID,
         selector: `#${ENTITY_PROFILE_V2_SIDEBAR_ID}`,
-        title: 'Introducing the Asset Sidebar',
+        title: t('Introducing the Asset Sidebar'),
         content: (
             <Typography.Paragraph>
                 <p>

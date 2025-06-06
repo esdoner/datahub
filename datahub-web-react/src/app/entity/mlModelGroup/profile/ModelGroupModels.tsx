@@ -13,6 +13,7 @@ import { colors } from '@src/alchemy-components/theme';
 
 import { GetMlModelGroupQuery } from '@graphql/mlModelGroup.generated';
 import { EntityType } from '@types';
+import { t } from '@src/i18n/utils';
 
 const InfoItemContainer = styled.div<{ justifyContent }>`
     display: flex;
@@ -79,7 +80,7 @@ export default function MLGroupModels() {
 
     const columns = [
         {
-            title: 'Name',
+            title: t('Name'),
             dataIndex: 'name',
             key: 'name',
             width: 300,
@@ -92,7 +93,7 @@ export default function MLGroupModels() {
             ),
         },
         {
-            title: 'Version',
+            title: t('Version'),
             key: 'version',
             width: 70,
             render: (_: any, record: any) => (
@@ -100,7 +101,7 @@ export default function MLGroupModels() {
             ),
         },
         {
-            title: 'Created At',
+            title: t('Created At'),
             key: 'createdAt',
             width: 150,
             render: (_: any, record: any) => (
@@ -108,7 +109,7 @@ export default function MLGroupModels() {
             ),
         },
         {
-            title: 'Aliases',
+            title: t('Aliases'),
             key: 'aliases',
             width: 200,
             render: (_: any, record: any) => {
@@ -124,7 +125,7 @@ export default function MLGroupModels() {
             },
         },
         {
-            title: 'Properties',
+            title: t('Properties'),
             key: 'properties',
             width: 200,
             render: (_: any, record: any) => {
@@ -140,7 +141,7 @@ export default function MLGroupModels() {
             },
         },
         {
-            title: 'Description',
+            title: t('Description'),
             dataIndex: 'description',
             key: 'description',
             width: 300,

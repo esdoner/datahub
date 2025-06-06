@@ -11,6 +11,7 @@ import { useEnterKeyListener } from '@app/shared/useEnterKeyListener';
 import { Button } from '@src/alchemy-components';
 
 import { ActorFilter, Policy, PolicyType, ResourceFilter } from '@types';
+import { t } from '@src/i18n/utils';
 
 type Props = {
     policy: Omit<Policy, 'urn'>;
@@ -76,7 +77,7 @@ export default function PolicyBuilderModal({ policy, setPolicy, open, onClose, o
     // Step 1: Choose Policy Type
     const typeStep = () => {
         return {
-            title: 'Choose Policy Type',
+            title: t('Choose Policy Type'),
             content: (
                 <PolicyTypeForm
                     policyType={policy.type}
@@ -93,7 +94,7 @@ export default function PolicyBuilderModal({ policy, setPolicy, open, onClose, o
 
     // Step 2: Select privileges step.
     const privilegeStep = () => ({
-        title: 'Configure Privileges',
+        title: t('Configure Privileges'),
         content: (
             <PolicyPrivilegeForm
                 focusPolicyUrn={focusPolicyUrn}
@@ -117,7 +118,7 @@ export default function PolicyBuilderModal({ policy, setPolicy, open, onClose, o
     // Step 3: Assign Actors Step
     const actorStep = () => {
         return {
-            title: 'Assign Users & Groups',
+            title: t('Assign Users & Groups'),
             content: (
                 <PolicyActorForm
                     policyType={policy.type}
@@ -154,7 +155,7 @@ export default function PolicyBuilderModal({ policy, setPolicy, open, onClose, o
     // modalClosePopup for outside policy modal click
     const modalClosePopup = () => {
         Modal.confirm({
-            title: 'Exit Policy Editor',
+            title: t('Exit Policy Editor'),
             content: `Are you sure you want to exit policy editor? All changes will be lost`,
             onOk() {
                 onClose();

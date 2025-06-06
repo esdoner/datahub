@@ -2,6 +2,7 @@ import { Typography } from 'antd';
 import React from 'react';
 
 import { OnboardingStep } from '@app/onboarding/OnboardingStep';
+import { t } from '@src/i18n/utils';
 
 export const INGESTION_CREATE_SOURCE_ID = 'ingestion-create-source';
 export const INGESTION_REFRESH_SOURCES_ID = 'ingestion-refresh-sources';
@@ -10,7 +11,7 @@ export const IngestionOnboardingConfig: OnboardingStep[] = [
     {
         id: INGESTION_CREATE_SOURCE_ID,
         selector: `#${INGESTION_CREATE_SOURCE_ID}`,
-        title: 'Create a new Ingestion Source',
+        title: t('Create a new Ingestion Source'),
         content: (
             <Typography.Paragraph>
                 <p>
@@ -35,7 +36,7 @@ export const IngestionOnboardingConfig: OnboardingStep[] = [
     {
         id: INGESTION_REFRESH_SOURCES_ID,
         selector: `#${INGESTION_REFRESH_SOURCES_ID}`,
-        title: 'Refresh Ingestion Sources',
+        title: t('Refresh Ingestion Sources'),
         content: (
             <Typography.Paragraph>
                 <p>Click to force a refresh of running ingestion sources.</p>

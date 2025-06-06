@@ -2,6 +2,7 @@ import { handleAccessRoles } from '@app/entityV2/shared/tabs/Dataset/AccessManag
 
 import { GetExternalRolesQuery } from '@graphql/dataset.generated';
 import { GetMeQuery } from '@graphql/me.generated';
+import { t } from '@src/i18n/utils';
 
 describe('handleAccessRoles', () => {
     it('should properly map the externalroles and loggedin user', () => {
@@ -37,7 +38,7 @@ describe('handleAccessRoles', () => {
                     info: {
                         active: true,
                         displayName: 'DataHub',
-                        title: 'DataHub Root User',
+                        title: t('DataHub Root User'),
                         firstName: null,
                         lastName: null,
                         fullName: null,
@@ -121,7 +122,7 @@ describe('handleAccessRoles', () => {
                     info: {
                         active: true,
                         displayName: 'DataHub',
-                        title: 'DataHub Root User',
+                        title: t('DataHub Root User'),
                         firstName: null,
                         lastName: null,
                         fullName: null,
@@ -212,7 +213,7 @@ describe('handleAccessRoles', () => {
                     info: {
                         active: true,
                         displayName: 'DataHub',
-                        title: 'DataHub Root User',
+                        title: t('DataHub Root User'),
                         firstName: null,
                         lastName: null,
                         fullName: null,

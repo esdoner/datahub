@@ -4,6 +4,7 @@ import React from 'react';
 import { DataContractBuilder } from '@app/entity/shared/tabs/Dataset/Validations/contract/builder/DataContractBuilder';
 import { DataContractBuilderState } from '@app/entity/shared/tabs/Dataset/Validations/contract/builder/types';
 import ClickOutside from '@app/shared/ClickOutside';
+import { t } from '@src/i18n/utils';
 
 import { DataContract } from '@types';
 
@@ -33,7 +34,7 @@ export const DataContractBuilderModal = ({ entityUrn, initialState, onSubmit, on
 
     const modalClosePopup = () => {
         Modal.confirm({
-            title: 'Exit Editor',
+            title: t('Exit Editor'),
             content: `Are you sure you want to exit the editor? All changes will be lost`,
             onOk() {
                 onCancel?.();

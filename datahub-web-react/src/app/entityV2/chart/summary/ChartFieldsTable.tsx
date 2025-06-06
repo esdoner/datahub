@@ -8,6 +8,7 @@ import { CompactFieldIconWithTooltip } from '@app/sharedV2/icons/CompactFieldIco
 import { useEntityRegistry } from '@app/useEntityRegistry';
 
 import { EntityType, SchemaField } from '@types';
+import { t } from '@src/i18n/utils';
 
 const MAX_ROWS = 5;
 
@@ -46,7 +47,7 @@ export default function ChartFieldsTable({ urn, rows }: Props) {
     const nameColumn = {
         ellipsis: true,
         width: '45%',
-        title: 'Name',
+        title: t('Name'),
         dataIndex: 'fieldPath',
         key: 'fieldPath',
         filtered: true,
@@ -56,7 +57,7 @@ export default function ChartFieldsTable({ urn, rows }: Props) {
     const descriptionColumn = {
         ellipsis: true,
         width: '45%',
-        title: 'Description',
+        title: t('Description'),
         dataIndex: 'description',
         key: 'description',
         render: descriptionRender,

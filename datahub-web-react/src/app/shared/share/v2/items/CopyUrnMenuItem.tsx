@@ -5,6 +5,8 @@ import styled from 'styled-components';
 
 import { StyledMenuItem } from '@app/shared/share/v2/styledComponents';
 
+import { t } from '@i18n/utils'
+
 interface CopyUrnMenuItemProps {
     urn: string;
     key: string;
@@ -33,7 +35,7 @@ export default function CopyUrnMenuItem({ urn, key, type }: CopyUrnMenuItemProps
             <Tooltip title={`Copy the URN for this ${type}. An URN uniquely identifies an entity on DataHub.`}>
                 {isClicked ? <CheckOutlined /> : <CopyOutlined />}
                 <TextSpan>
-                    <b>Copy URN</b>
+                    <b>{ t('Copy URN') }</b>
                 </TextSpan>
             </Tooltip>
         </StyledMenuItem>

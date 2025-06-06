@@ -7,6 +7,7 @@ import { NameColumn } from '@app/entityV2/ownership/table/NameColumn';
 import { StyledTable } from '@app/entityV2/shared/components/styled/StyledTable';
 
 import { OwnershipTypeEntity } from '@types';
+import { t } from '@src/i18n/utils';
 
 type Props = {
     ownershipTypes: OwnershipTypeEntity[];
@@ -18,14 +19,14 @@ type Props = {
 export const OwnershipTable = ({ ownershipTypes, setIsOpen, setOwnershipType, refetch }: Props) => {
     const tableColumns = [
         {
-            title: 'Name',
+            title: t('Name'),
             dataIndex: 'name',
             sorter: (a: any, b: any) => a?.info?.name?.localeCompare(b?.info?.name),
             key: 'name',
             render: (_, record: any) => <NameColumn ownershipType={record} />,
         },
         {
-            title: 'Description',
+            title: t('Description'),
             dataIndex: 'description',
             key: 'description',
             render: (_, record: any) => <DescriptionColumn ownershipType={record} />,

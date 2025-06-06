@@ -8,6 +8,7 @@ import { IncidentAction } from '@app/entityV2/shared/tabs/Incident/constant';
 import { EntityStagedForIncident, IncidentTableRow } from '@app/entityV2/shared/tabs/Incident/types';
 import ClickOutside from '@src/app/shared/ClickOutside';
 import { EntityPrivileges, Incident } from '@src/types.generated';
+import { t } from '@src/i18n/utils';
 
 const modalBodyStyle = { padding: 0, fontFamily: 'Mulish, sans-serif' };
 
@@ -34,7 +35,7 @@ export const IncidentDetailDrawer = ({
     const onCloseModal = () => {
         if (showEditor) {
             Modal.confirm({
-                title: 'Exit Editor',
+                title: t('Exit Editor'),
                 content: `Are you sure you want to exit the editor? All changes will be lost`,
                 onOk() {
                     onCancel?.();

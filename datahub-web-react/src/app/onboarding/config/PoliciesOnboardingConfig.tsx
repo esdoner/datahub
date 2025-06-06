@@ -2,6 +2,7 @@ import { Typography } from 'antd';
 import React from 'react';
 
 import { OnboardingStep } from '@app/onboarding/OnboardingStep';
+import { t } from '@src/i18n/utils';
 
 export const POLICIES_INTRO_ID = 'policies-intro';
 export const POLICIES_CREATE_POLICY_ID = 'policies-create-policy';
@@ -9,7 +10,7 @@ export const POLICIES_CREATE_POLICY_ID = 'policies-create-policy';
 export const PoliciesOnboardingConfig: OnboardingStep[] = [
     {
         id: POLICIES_INTRO_ID,
-        title: 'Policies',
+        title: t('Policies'),
         content: (
             <Typography.Paragraph>
                 <p>
@@ -39,7 +40,7 @@ export const PoliciesOnboardingConfig: OnboardingStep[] = [
     {
         id: POLICIES_CREATE_POLICY_ID,
         selector: `#${POLICIES_CREATE_POLICY_ID}`,
-        title: 'Create a new Policy',
+        title: t('Create a new Policy'),
         content: (
             <Typography.Paragraph>
                 <p>

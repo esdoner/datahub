@@ -21,6 +21,7 @@ import Loading from '@app/shared/Loading';
 import usePrevious from '@app/shared/usePrevious';
 
 import { GetDatasetQuery } from '@graphql/dataset.generated';
+import {t} from '@i18n/utils'
 
 const Content = styled.div<{ $backgroundColor: string }>`
     height: 100%;
@@ -121,7 +122,7 @@ export default function QueriesTab() {
                     <>
                         {(highlightedQueries.length > 0 || highlightedQueriesLoading) && (
                             <QueriesListSection
-                                title="Highlighted Queries"
+                                title={t("Highlighted Queries")}
                                 section={QueriesTabSection.Highlighted}
                                 tooltip="Curated queries relevant to this dataset"
                                 tooltipPosition="bottom"
@@ -138,11 +139,11 @@ export default function QueriesTab() {
                         )}
                         {highlightedQueries.length === 0 && !highlightedQueriesLoading && (
                             <EmptyQueriesSection
-                                sectionName="Highlighted Queries"
+                                sectionName={t("Highlighted Queries")}
                                 tooltip="Curated queries relevant to this dataset"
                                 tooltipPosition="bottom"
                                 showButton
-                                buttonLabel="Add Highlighted Query"
+                                buttonLabel={t("Add Highlighted Query")}
                                 isButtonDisabled={!canEditQueries}
                                 onButtonClick={() => setShowQueryBuilder(true)}
                             />

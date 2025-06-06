@@ -19,6 +19,7 @@ import { GetSearchResultsForMultipleQuery } from '@src/graphql/search.generated'
 import { EntityType } from '@src/types.generated';
 
 import { useDeleteTagMutation } from '@graphql/tag.generated';
+import { t } from '@src/i18n/utils';
 
 interface Props {
     searchQuery: string;
@@ -117,7 +118,7 @@ const TagsTable = ({ searchQuery, searchData, loading: propLoading, networkStatu
     const columns = useMemo(
         () => [
             {
-                title: 'Tag',
+                title: t('Tag'),
                 key: 'tag',
                 render: (record) => {
                     const tag = record.entity;
@@ -132,28 +133,28 @@ const TagsTable = ({ searchQuery, searchData, loading: propLoading, networkStatu
                 sortOrder: sortedInfo.columnKey === 'tag' ? sortedInfo.order : null,
             },
             {
-                title: 'Color',
+                title: t('Color'),
                 key: 'color',
                 render: (record) => {
                     return <TagColorColumn tag={record.entity} />;
                 },
             },
             {
-                title: 'Description',
+                title: t('Description'),
                 key: 'description',
                 render: (record) => {
                     return <TagDescriptionColumn key={`description-${record.entity.urn}`} tagUrn={record.entity.urn} />;
                 },
             },
             {
-                title: 'Owners',
+                title: t('Owners'),
                 key: 'owners',
                 render: (record) => {
                     return <TagOwnersColumn key={`owners-${record.entity.urn}`} tagUrn={record.entity.urn} />;
                 },
             },
             {
-                title: 'Applied to',
+                title: t('Applied to'),
                 key: 'appliedTo',
                 render: (record) => {
                     return <TagAppliedToColumn key={`applied-${record.entity.urn}`} tagUrn={record.entity.urn} />;

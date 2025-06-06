@@ -1,5 +1,6 @@
 import { Modal, message } from 'antd';
 import React from 'react';
+import { t } from '@src/i18n/utils';
 
 import ActionDropdown from '@app/entityV2/shared/components/styled/search/action/ActionDropdown';
 import { handleBatchError } from '@app/entityV2/shared/utils';
@@ -48,7 +49,7 @@ export default function DeleteDropdown({ urns, disabled = false, refetch }: Prop
                 name="Delete"
                 actions={[
                     {
-                        title: 'Mark as deleted',
+                        title: t('Mark as deleted'),
                         onClick: () => {
                             Modal.confirm({
                                 title: `Confirm Delete`,

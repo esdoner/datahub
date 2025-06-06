@@ -5,7 +5,7 @@ import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { useTranslation } from 'react-i18next'
+import { t } from '@src/i18n/utils';
 import BusinessAttributeItemMenu from '@app/businessAttribute/BusinessAttributeItemMenu';
 import CreateBusinessAttributeModal from '@app/businessAttribute/CreateBusinessAttributeModal';
 import useDescriptionRenderer from '@app/businessAttribute/utils/useDescriptionRenderer';
@@ -71,7 +71,6 @@ const searchBarInputStyle = {
 const DEFAULT_PAGE_SIZE = 10;
 
 export const BusinessAttributes = () => {
-    const {t} = useTranslation()
     const [isCreatingBusinessAttribute, setIsCreatingBusinessAttribute] = useState(false);
     const entityRegistry = useEntityRegistry();
 

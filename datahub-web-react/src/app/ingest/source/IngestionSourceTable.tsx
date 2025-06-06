@@ -16,6 +16,7 @@ import { CLI_EXECUTOR_ID, getIngestionSourceStatus } from '@app/ingest/source/ut
 import { useShowNavBarRedesign } from '@src/app/useShowNavBarRedesign';
 
 import { IngestionSource } from '@types';
+import { t } from '@src/i18n/utils';
 
 const PAGE_HEADER_HEIGHT = 395;
 
@@ -86,27 +87,27 @@ function IngestionSourceTable({
 
     const tableColumns = [
         {
-            title: 'Type',
+            title: t('Type'),
             dataIndex: 'type',
             key: 'type',
             render: (type: string, record: any) => <TypeColumn type={type} record={record} />,
             sorter: true,
         },
         {
-            title: 'Name',
+            title: t('Name'),
             dataIndex: 'name',
             key: 'name',
             render: (name: string) => name || '',
             sorter: true,
         },
         {
-            title: 'Schedule',
+            title: t('Schedule'),
             dataIndex: 'schedule',
             key: 'schedule',
             render: ScheduleColumn,
         },
         {
-            title: 'Status',
+            title: t('Status'),
             dataIndex: 'lastExecStatus',
             key: 'lastExecStatus',
             render: (status: any, record) => (

@@ -14,6 +14,7 @@ import TabFullsizedContext from '@app/shared/TabFullsizedContext';
 import { getColor } from '@src/alchemy-components/theme/utils';
 
 import { LineageDirection } from '@types';
+import { t } from '@i18n/utils'
 
 const LINEAGE_SWITCH_WIDTH = 90;
 
@@ -80,10 +81,10 @@ function WideLineageTab({ defaultDirection }: { defaultDirection: LineageDirecti
                 <LineageTabHeader>
                     <LineageSwitchWrapper>
                         <LineageViewSwitch selected={isVisualizeView} onClick={() => setVisualizeView(true)}>
-                            Explorer
+                            {t('Explorer')}
                         </LineageViewSwitch>
                         <LineageViewSwitch selected={!isVisualizeView} onClick={() => setVisualizeView(false)}>
-                            Impact Analysis
+                            {t('Impact Analysis')}
                         </LineageViewSwitch>
                     </LineageSwitchWrapper>
                 </LineageTabHeader>

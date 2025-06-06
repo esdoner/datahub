@@ -22,6 +22,7 @@ import useSchemaBlameRenderer from '@app/entity/shared/tabs/Dataset/Schema/utils
 import useTagsAndTermsRenderer from '@app/entity/shared/tabs/Dataset/Schema/utils/useTagsAndTermsRenderer';
 import useUsageStatsRenderer from '@app/entity/shared/tabs/Dataset/Schema/utils/useUsageStatsRenderer';
 import { useBusinessAttributesFlag } from '@app/useAppConfig';
+import { t } from '@src/i18n/utils';
 
 import {
     EditableSchemaMetadata,
@@ -135,7 +136,7 @@ export default function SchemaTable({
 
     const fieldColumn = {
         width: '22%',
-        title: 'Field',
+        title: t('Field'),
         dataIndex: 'fieldPath',
         key: 'fieldPath',
         render: schemaTitleRenderer,
@@ -147,7 +148,7 @@ export default function SchemaTable({
 
     const descriptionColumn = {
         width: '22%',
-        title: 'Description',
+        title: t('Description'),
         dataIndex: 'description',
         key: 'description',
         render: descriptionRender,
@@ -155,7 +156,7 @@ export default function SchemaTable({
 
     const tagColumn = {
         width: '13%',
-        title: 'Tags',
+        title: t('Tags'),
         dataIndex: 'globalTags',
         key: 'tag',
         render: tagRenderer,
@@ -163,7 +164,7 @@ export default function SchemaTable({
 
     const termColumn = {
         width: '13%',
-        title: 'Glossary Terms',
+        title: t('Glossary Terms'),
         dataIndex: 'globalTags',
         key: 'tag',
         render: termRenderer,
@@ -171,7 +172,7 @@ export default function SchemaTable({
 
     const businessAttributeColumn = {
         width: '18%',
-        title: 'Business Attribute',
+        title: t('Business Attribute'),
         dataIndex: 'businessAttribute',
         key: 'businessAttribute',
         render: businessAttributeRenderer,
@@ -203,7 +204,7 @@ export default function SchemaTable({
 
     const usageColumn = {
         width: '10%',
-        title: 'Usage',
+        title: t('Usage'),
         dataIndex: 'fieldPath',
         key: 'usage',
         render: usageStatsRenderer,
@@ -212,7 +213,7 @@ export default function SchemaTable({
 
     const propertiesColumn = {
         width: '13%',
-        title: 'Properties',
+        title: t('Properties'),
         dataIndex: '',
         key: 'menu',
         render: (field: SchemaField) => <PropertiesColumn field={field} />,

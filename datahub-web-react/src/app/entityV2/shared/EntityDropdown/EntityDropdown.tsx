@@ -50,6 +50,8 @@ import { useEntityRegistry } from '@app/useEntityRegistry';
 import { useUpdateDeprecationMutation } from '@graphql/mutations.generated';
 import { EntityType } from '@types';
 
+import { t } from '@i18n/utils';
+
 const MenuItem = styled.div`
     font-size: 13px;
     font-weight: 400;
@@ -203,7 +205,7 @@ const EntityDropdown = (props: Props) => {
                                     }}
                                 >
                                     <LinkOutlined />
-                                    &nbsp; Copy Url
+                                    &nbsp; {t('Copy Url')}
                                 </MenuItem>
                             </Menu.Item>
                         )}
@@ -224,7 +226,7 @@ const EntityDropdown = (props: Props) => {
                             <Menu.Item key="1-1">
                                 <MenuItem onClick={() => setIsEntityAnnouncementModalVisible(true)}>
                                     <NotificationOutlined />
-                                    &nbsp;Add Note
+                                    &nbsp;{t('Add Note')}
                                 </MenuItem>
                             </Menu.Item>
                         )}
@@ -236,7 +238,7 @@ const EntityDropdown = (props: Props) => {
                             >
                                 <MenuItem>
                                     <PlusOutlined />
-                                    &nbsp;Add Term
+                                    &nbsp;{t('Add Term')}
                                 </MenuItem>
                             </StyledMenuItem>
                         )}
@@ -248,7 +250,7 @@ const EntityDropdown = (props: Props) => {
                             >
                                 <MenuItem>
                                     <FolderAddOutlined />
-                                    &nbsp;Add Term Group
+                                    &nbsp;{t('Add Term Group')}
                                 </MenuItem>
                             </StyledMenuItem>
                         )}
@@ -260,7 +262,7 @@ const EntityDropdown = (props: Props) => {
                                 onClick={() => setIsMoveModalVisible(true)}
                             >
                                 <MenuItem>
-                                    <FolderOpenOutlined /> &nbsp;Move
+                                    <FolderOpenOutlined /> &nbsp;{t('Move')}
                                 </MenuItem>
                             </StyledMenuItem>
                         )}
@@ -280,7 +282,7 @@ const EntityDropdown = (props: Props) => {
                                     }
                                 >
                                     <MenuItem data-testid="entity-menu-delete-button">
-                                        <DeleteOutlined /> &nbsp;Delete
+                                        <DeleteOutlined /> &nbsp;{t('Delete')}
                                     </MenuItem>
                                 </Tooltip>
                             </StyledMenuItem>
@@ -288,14 +290,14 @@ const EntityDropdown = (props: Props) => {
                         {menuItems.has(EntityMenuItems.EDIT) && onEdit && (
                             <StyledMenuItem key="9" onClick={onEdit}>
                                 <MenuItem data-testid="entity-menu-edit-button">
-                                    <EditOutlined /> &nbsp;Edit
+                                    <EditOutlined /> &nbsp;{t('Edit')}
                                 </MenuItem>
                             </StyledMenuItem>
                         )}
                         {menuItems.has(EntityMenuItems.RAISE_INCIDENT) && (
                             <StyledMenuItem key="6" disabled={false}>
                                 <MenuItem onClick={() => setIsRaiseIncidentModalVisible(true)}>
-                                    <WarningOutlined /> &nbsp;Raise Incident
+                                    <WarningOutlined /> &nbsp;{t('Raise Incident')}
                                 </MenuItem>
                             </StyledMenuItem>
                         )}
@@ -305,14 +307,14 @@ const EntityDropdown = (props: Props) => {
                             !entityData?.versionProperties && (
                                 <StyledMenuItem key="link" disabled={false}>
                                     <MenuItem onClick={() => setIsLinkAssetVersionModalVisible(true)}>
-                                        <LinkIcon fontSize="inherit" /> &nbsp;Link a Newer Version
+                                        <LinkIcon fontSize="inherit" /> &nbsp;{t('Link a Newer Version')}
                                     </MenuItem>
                                 </StyledMenuItem>
                             )}
                         {onEntityProfile && entityData?.versionProperties?.isLatest && (
                             <StyledMenuItem key="unlink" disabled={false}>
                                 <MenuItem onClick={() => setIsUnlinkAssetVersionModalVisible(true)}>
-                                    <LinkBreak fontSize="inherit" /> &nbsp;Unlink from Previous Version
+                                    <LinkBreak fontSize="inherit" /> &nbsp;{t('Unlink from Previous Version')}
                                 </MenuItem>
                             </StyledMenuItem>
                         )}
@@ -330,7 +332,7 @@ const EntityDropdown = (props: Props) => {
                                         setDrawer(DrawerType.VERSIONS);
                                     }}
                                 >
-                                    <GitCommit fontSize="inherit" /> &nbsp;Show Versions
+                                    <GitCommit fontSize="inherit" /> &nbsp;{t('Show Versions')}
                                 </MenuItem>
                             </StyledMenuItem>
                         )}
@@ -340,7 +342,7 @@ const EntityDropdown = (props: Props) => {
                                 disabled={false}
                                 title={
                                     <MenuItem>
-                                        <ShareAltOutlined /> &nbsp;Share
+                                        <ShareAltOutlined /> &nbsp;{t('Share')}
                                     </MenuItem>
                                 }
                             >

@@ -1,5 +1,6 @@
 import { Modal, message } from 'antd';
 import React, { useState } from 'react';
+import { t } from '@src/i18n/utils';
 
 import ActionDropdown from '@app/entityV2/shared/components/styled/search/action/ActionDropdown';
 import SetDataProductModal from '@app/entityV2/shared/containers/profile/sidebar/DataProduct/SetDataProductModal';
@@ -52,13 +53,13 @@ export default function DataProductsDropdown({ urns, disabled = false, refetch }
                 name="Data Product"
                 actions={[
                     {
-                        title: 'Set Data Product',
+                        title: t('Set Data Product'),
                         onClick: () => {
                             setIsEditModalVisible(true);
                         },
                     },
                     {
-                        title: 'Unset Data Product',
+                        title: t('Unset Data Product'),
                         onClick: () => {
                             Modal.confirm({
                                 title: `If you continue, Data Product will be removed for the selected assets.`,

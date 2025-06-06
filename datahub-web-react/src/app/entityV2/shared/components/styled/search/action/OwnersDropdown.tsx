@@ -5,6 +5,7 @@ import {
     EditOwnersModal,
     OperationType,
 } from '@app/entityV2/shared/containers/profile/sidebar/Ownership/EditOwnersModal';
+import { t } from '@src/i18n/utils';
 
 type Props = {
     urns: Array<string>;
@@ -23,14 +24,14 @@ export default function OwnersDropdown({ urns, disabled = false, refetch }: Prop
                 name="Owners"
                 actions={[
                     {
-                        title: 'Add owners',
+                        title: t('Add owners'),
                         onClick: () => {
                             setOperationType(OperationType.ADD);
                             setIsEditModalVisible(true);
                         },
                     },
                     {
-                        title: 'Remove owners',
+                        title: t('Remove owners'),
                         onClick: () => {
                             setOperationType(OperationType.REMOVE);
                             setIsEditModalVisible(true);

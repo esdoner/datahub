@@ -2,6 +2,7 @@ import { Typography } from 'antd';
 import React from 'react';
 
 import { OnboardingStep } from '@app/onboarding/OnboardingStep';
+import { t } from '@src/i18n/utils';
 
 export const LINEAGE_GRAPH_INTRO_ID = 'lineage-graph-intro';
 export const LINEAGE_GRAPH_TIME_FILTER_ID = 'lineage-graph-time-filter';
@@ -9,7 +10,7 @@ export const LINEAGE_GRAPH_TIME_FILTER_ID = 'lineage-graph-time-filter';
 export const LineageGraphOnboardingConfig: OnboardingStep[] = [
     {
         id: LINEAGE_GRAPH_INTRO_ID,
-        title: 'Lineage Graph',
+        title: t('Lineage Graph'),
         content: (
             <Typography.Paragraph>
                 <p>
@@ -35,7 +36,7 @@ export const LineageGraphOnboardingConfig: OnboardingStep[] = [
     {
         id: LINEAGE_GRAPH_TIME_FILTER_ID,
         selector: `#${LINEAGE_GRAPH_TIME_FILTER_ID}`,
-        title: 'Filter Lineage Edges by Date',
+        title: t('Filter Lineage Edges by Date'),
         content: (
             <Typography.Paragraph>
                 <p>

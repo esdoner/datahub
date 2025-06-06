@@ -19,6 +19,7 @@ import { useEntityRegistry } from '@app/useEntityRegistry';
 import { getHomePagePostsFilters } from '@app/utils/queryUtils';
 
 import { useListPostsQuery } from '@graphql/post.generated';
+import { t } from '@src/i18n/utils';
 
 const PostsContainer = styled.div`
     display: flex;
@@ -99,7 +100,7 @@ export const PostList = () => {
 
     const allColumns = [
         {
-            title: 'Title',
+            title: t('Title'),
             dataIndex: '',
             key: 'title',
             sorter: (sourceA, sourceB) => {
@@ -109,13 +110,13 @@ export const PostList = () => {
             width: '20%',
         },
         {
-            title: 'Description',
+            title: t('Description'),
             dataIndex: '',
             key: 'description',
             render: (record: PostEntry) => PostColumn(record.description || ''),
         },
         {
-            title: 'Type',
+            title: t('Type'),
             dataIndex: '',
             key: 'type',
             render: (record: PostEntry) => PostColumn(POST_TYPE_TO_DISPLAY_TEXT[record.contentType]),

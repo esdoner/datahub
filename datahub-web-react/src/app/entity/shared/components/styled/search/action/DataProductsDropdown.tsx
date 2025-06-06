@@ -6,6 +6,7 @@ import SetDataProductModal from '@app/entity/shared/containers/profile/sidebar/D
 import { handleBatchError } from '@app/entity/shared/utils';
 
 import { useBatchSetDataProductMutation } from '@graphql/dataProduct.generated';
+import { t } from '@src/i18n/utils';
 
 type Props = {
     urns: Array<string>;
@@ -52,13 +53,13 @@ export default function DataProductsDropdown({ urns, disabled = false, refetch }
                 name="Data Product"
                 actions={[
                     {
-                        title: 'Set Data Product',
+                        title: t('Set Data Product'),
                         onClick: () => {
                             setIsEditModalVisible(true);
                         },
                     },
                     {
-                        title: 'Unset Data Product',
+                        title: t('Unset Data Product'),
                         onClick: () => {
                             Modal.confirm({
                                 title: `If you continue, Data Product will be removed for the selected assets.`,

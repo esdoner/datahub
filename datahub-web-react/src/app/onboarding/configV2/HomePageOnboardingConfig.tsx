@@ -5,6 +5,7 @@ import { ANTD_GRAY } from '@app/entityV2/shared/constants';
 import { OnboardingStep } from '@app/onboarding/OnboardingStep';
 
 import dataHubFlowDiagram from '@images/datahub-flow-diagram-light.png';
+import { t } from '@src/i18n/utils';
 
 export const V2_SEARCH_BAR_ID = 'v2-search-bar';
 export const V2_HOME_PAGE_MOST_POPULAR_ID = 'v2-home-page-most-popular';
@@ -86,7 +87,7 @@ const HomePageOnboardingConfig: OnboardingStep[] = [
     {
         id: V2_SEARCH_BAR_ID,
         selector: `#${V2_SEARCH_BAR_ID}`,
-        title: 'Find your Data 🔍',
+        title: t('Find your Data 🔍'),
         content: (
             <Typography.Paragraph>
                 <p>
@@ -99,7 +100,7 @@ const HomePageOnboardingConfig: OnboardingStep[] = [
     {
         id: V2_SEARCH_BAR_VIEWS,
         selector: `#${V2_SEARCH_BAR_VIEWS}`,
-        title: 'Only the stuff you need 📷',
+        title: t('Only the stuff you need 📷'),
         content: (
             <Typography.Paragraph>
                 <p>
@@ -113,13 +114,13 @@ const HomePageOnboardingConfig: OnboardingStep[] = [
     {
         id: V2_HOME_PAGE_MOST_POPULAR_ID,
         selector: `#${V2_HOME_PAGE_MOST_POPULAR_ID}`,
-        title: 'Explore Most Popular',
+        title: t('Explore Most Popular'),
         content: "Here you'll find the assets that are viewed most frequently within your organization.",
     },
     {
         id: V2_HOME_PAGE_DISCOVER_ID,
         selector: `#${V2_HOME_PAGE_DISCOVER_ID}`,
-        title: 'Discover 🔍',
+        title: t('Discover 🔍'),
         content: (
             <Typography.Paragraph>
                 <p>
@@ -132,7 +133,7 @@ const HomePageOnboardingConfig: OnboardingStep[] = [
     {
         id: V2_HOME_PAGE_ANNOUNCEMENTS_ID,
         selector: `#${V2_HOME_PAGE_ANNOUNCEMENTS_ID}`,
-        title: 'Announcements 📣',
+        title: t('Announcements 📣'),
         content: (
             <Typography.Paragraph>
                 <p>
@@ -145,7 +146,7 @@ const HomePageOnboardingConfig: OnboardingStep[] = [
     {
         id: V2_HOME_PAGE_PERSONAL_SIDEBAR_ID,
         selector: `#${V2_HOME_PAGE_PERSONAL_SIDEBAR_ID}`,
-        title: 'Your Personal Sidebar 📌',
+        title: t('Your Personal Sidebar 📌'),
         content: (
             <Typography.Paragraph>
                 <p>

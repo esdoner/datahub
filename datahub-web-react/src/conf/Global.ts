@@ -6,6 +6,7 @@ export enum PageRoutes {
      * Server-side authentication route
      */
     ROOT = '/',
+    WORKSPACE = '/workspace',
     AUTHENTICATE = '/authenticate',
     SIGN_UP = '/signup',
     LOG_IN = '/login',

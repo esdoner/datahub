@@ -1,4 +1,5 @@
 import { EntityType } from '@types';
+import { t } from '@src/i18n/utils';
 
 // TODO(Gabe): integrate this w/ the theme
 export const REDESIGN_COLORS = {
@@ -142,54 +143,54 @@ export const LINEAGE_COLORS = {
 
 export const EMPTY_MESSAGES = {
     documentation: {
-        title: 'No documentation yet',
+        title: t('No documentation yet'),
     },
     tags: {
-        title: 'No tags yet',
+        title: t('No tags yet'),
         description: 'Tag entities to help make them more discoverable and call out their most important attributes.',
     },
     terms: {
-        title: 'No terms yet',
+        title: t('No terms yet'),
         description: 'Apply glossary terms to entities to classify their data.',
     },
     owners: {
-        title: 'No owners yet',
+        title: t('No owners yet'),
         description: 'Adding owners helps you keep track of who is responsible for this data.',
     },
     properties: {
-        title: 'No properties',
+        title: t('No properties'),
         description: 'Properties will appear here if they exist in your data source.',
     },
     queries: {
-        title: 'No queries yet',
+        title: t('No queries yet'),
         description: 'Create, view, and share commonly used queries for this dataset.',
     },
     domain: {
-        title: 'No domain yet',
+        title: t('No domain yet'),
         description: 'Group related entities based on your organizational structure using by adding them to a Domain.',
     },
     dataProduct: {
-        title: 'No product yet',
+        title: t('No product yet'),
         description: 'Group related entities based on shared characteristics by adding them to a Data Product.',
     },
     contains: {
-        title: 'Does not Contain any Glossary Terms',
+        title: t('Does not Contain any Glossary Terms'),
         description: 'Terms can contain other terms to represent a "Has A" style relationship.',
     },
     inherits: {
-        title: 'Does not Inherit any Glossary Terms',
+        title: t('Does not Inherit any Glossary Terms'),
         description: 'Terms can inherit from other terms to represent an "Is A" style relationship.',
     },
     'contained by': {
-        title: 'Is not Contained by any Glossary Terms',
+        title: t('Is not Contained by any Glossary Terms'),
         description: 'Terms can be contained by other terms to represent a "Has A" style relationship.',
     },
     'inherited by': {
-        title: 'Is not Inherited by any Glossary Terms',
+        title: t('Is not Inherited by any Glossary Terms'),
         description: 'Terms can be inherited by other terms to represent an "Is A" style relationship.',
     },
     structuredProps: {
-        title: 'No value set',
+        title: t('No value set'),
     },
 };
 

@@ -119,6 +119,7 @@ export enum EventType {
     ShowAllVersionsEvent,
     HomePageClick,
     SearchBarFilter,
+    BrandPageViewEvent
 }
 
 /**
@@ -176,6 +177,10 @@ export interface IntroduceYourselfSkipEvent extends BaseEvent {
  */
 export interface HomePageViewEvent extends BaseEvent {
     type: EventType.HomePageViewEvent;
+}
+
+export interface BrandPageViewEvent extends BaseEvent {
+    type: EventType.BrandPageViewEvent;
 }
 
 /**
@@ -886,6 +891,7 @@ export interface SearchBarFilterEvent extends BaseEvent {
 export type Event =
     | PageViewEvent
     | HomePageViewEvent
+    | BrandPageViewEvent
     | IntroduceYourselfViewEvent
     | IntroduceYourselfSubmitEvent
     | IntroduceYourselfSkipEvent

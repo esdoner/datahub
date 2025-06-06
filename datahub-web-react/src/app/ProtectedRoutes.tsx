@@ -7,6 +7,7 @@ import DataHubTitle from '@app/DataHubTitle';
 import EmbedRoutes from '@app/EmbedRoutes';
 import { SearchRoutes } from '@app/SearchRoutes';
 import { HomePage } from '@app/home/HomePage';
+import { BrandPage } from '@app/brand/BrandPage';
 import { HomePage as HomePageV2 } from '@app/homeV2/HomePage';
 import { IntroduceYourself } from '@app/homeV2/introduce/IntroduceYourself';
 import { useSetUserPersona } from '@app/homeV2/persona/useUserPersona';
@@ -34,6 +35,7 @@ export const ProtectedRoutes = (): JSX.Element => {
 
     const isThemeV2 = useIsThemeV2();
     const FinalHomePage = isThemeV2 ? HomePageV2 : HomePage;
+    const CustomBrandPage = BrandPage;
 
     const location = useLocation();
     const history = useHistory();
@@ -50,7 +52,8 @@ export const ProtectedRoutes = (): JSX.Element => {
             <DataHubTitle />
             <StyledLayout className={isThemeV2 ? 'themeV2' : undefined}>
                 <Switch>
-                    <Route exact path="/" render={() => <FinalHomePage />} />
+                    <Route exact path="/" render={() => <CustomBrandPage />} />
+                    <Route exact path="/workspace" render={() => <FinalHomePage />} />
                     <Route path={PageRoutes.EMBED} render={() => <EmbedRoutes />} />
                     <Route exact path={PageRoutes.INTRODUCE} render={() => <IntroduceYourself />} />
                     <Route path="/*" component={SearchRoutes} />

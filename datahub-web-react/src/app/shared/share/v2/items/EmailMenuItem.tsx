@@ -6,6 +6,8 @@ import styled from 'styled-components';
 
 import { StyledMenuItem } from '@app/shared/share/v2/styledComponents';
 
+import { t } from '@i18n/utils';
+
 interface EmailMenuItemProps {
     urn: string;
     name: string;
@@ -44,7 +46,7 @@ export default function EmailMenuItem({ urn, name, type, key }: EmailMenuItemPro
                 {isClicked ? <CheckOutlined /> : <MailOutlined />}
                 <TextSpan>
                     <a href={link} target="_blank" rel="noreferrer" style={{ color: 'inherit' }}>
-                        <b>Email</b>
+                        <b>{t ('Email')}</b>
                     </a>
                 </TextSpan>
             </Tooltip>

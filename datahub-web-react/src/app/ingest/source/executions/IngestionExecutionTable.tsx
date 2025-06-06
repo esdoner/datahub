@@ -65,25 +65,25 @@ export default function IngestionExecutionTable({
     const entityRegistry = useEntityRegistry();
     const tableColumns = [
         {
-            title: 'Requested At',
+            title: t('Requested At'),
             dataIndex: 'requestedAt',
             key: 'requestedAt',
             render: TimeColumn,
         },
         {
-            title: 'Started At',
+            title: t('Started At'),
             dataIndex: 'executedAt',
             key: 'executedAt',
             render: TimeColumn,
         },
         {
-            title: 'Duration',
+            title: t('Duration'),
             dataIndex: 'duration',
             key: 'duration',
             render: (durationMs: number) => formatDuration(durationMs),
         },
         {
-            title: 'Status',
+            title: t('Status'),
             dataIndex: 'status',
             key: 'status',
             render: (status: any, record) => (
@@ -91,7 +91,7 @@ export default function IngestionExecutionTable({
             ),
         },
         {
-            title: 'Source',
+            title: t('Source'),
             dataIndex: 'source',
             key: 'source',
             render: (_, record: any) => (

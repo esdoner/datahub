@@ -8,6 +8,8 @@ import { useEntityRegistryV2 } from '@app/useEntityRegistry';
 
 import { EntityType } from '@types';
 
+import { t } from '@i18n/utils';
+
 interface CopyLinkMenuItemProps {
     key: string;
     urn: string;
@@ -45,7 +47,7 @@ export default function CopyLinkMenuItem({ key, urn, entityType }: CopyLinkMenuI
             <Tooltip title="Copy a shareable link to this entity.">
                 {isClicked ? <CheckOutlined /> : <StyledLinkOutlined />}
                 <TextSpan>
-                    <b>Copy Link</b>
+                    <b>{ t('Copy Link') }</b>
                 </TextSpan>
             </Tooltip>
         </StyledMenuItem>

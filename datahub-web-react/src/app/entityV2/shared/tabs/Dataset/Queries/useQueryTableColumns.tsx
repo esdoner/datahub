@@ -16,6 +16,7 @@ import { Sorting } from '@app/sharedV2/sorting/useSorting';
 import { useEntityRegistryV2 } from '@app/useEntityRegistry';
 
 import { CorpUser, Entity } from '@types';
+import { t } from '@src/i18n/utils';
 
 const UsersWrapper = styled.div`
     display: flex;
@@ -51,7 +52,7 @@ export default function useQueryTableColumns({
     const shouldRelyOnBackendSorting = sorting && showPagination;
 
     const titleColumn = {
-        title: 'Title',
+        title: t('Title'),
         dataIndex: 'title',
         key: 'name',
         field: 'name',
@@ -62,14 +63,14 @@ export default function useQueryTableColumns({
     };
 
     const descriptionColumn = {
-        title: 'Description',
+        title: t('Description'),
         dataIndex: 'description',
         key: 'description',
         render: (description: string) => <QueryDescription description={description} />,
     };
 
     const queryTextColumn = (width?: string | number) => ({
-        title: 'Query Text',
+        title: t('Query Text'),
         dataIndex: 'query',
         key: 'query',
         render: (rowQuery: string) => {
@@ -97,7 +98,7 @@ export default function useQueryTableColumns({
     });
 
     const createdByColumn = {
-        title: 'Created By',
+        title: t('Created By'),
         dataIndex: 'createdBy',
         key: 'createdBy',
         sorter: shouldRelyOnBackendSorting
@@ -114,7 +115,7 @@ export default function useQueryTableColumns({
     };
 
     const createdDateColumn = {
-        title: 'Date Created',
+        title: t('Date Created'),
         dataIndex: 'createdTime',
         key: 'dateCreated',
         field: 'createdAt',
@@ -125,7 +126,7 @@ export default function useQueryTableColumns({
     };
 
     const powersColumn = {
-        title: 'Powers',
+        title: t('Powers'),
         dataIndex: 'poweredEntity',
         key: 'powers',
         sorter: (queryA, queryB) => {
@@ -145,7 +146,7 @@ export default function useQueryTableColumns({
     };
 
     const usedByColumn = {
-        title: 'Used By',
+        title: t('Used By'),
         dataIndex: 'usedBy',
         key: 'usedBy',
         className: 'usedBy',
@@ -167,7 +168,7 @@ export default function useQueryTableColumns({
     };
 
     const columnsColumn = {
-        title: 'Columns',
+        title: t('Columns'),
         key: 'columns',
         width: 105,
         render: (query: Query) => <ColumnsColumn query={query} />,

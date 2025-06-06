@@ -8,6 +8,7 @@ import TableStats from '@app/entityV2/shared/tabs/Dataset/Stats/snapshot/TableSt
 import { formatBytes, formatNumberWithoutAbbreviation } from '@app/shared/formatNumber';
 
 import { DatasetProfile } from '@types';
+import { t } from '@src/i18n/utils';
 
 export const ChartTable = styled(Table)`
     margin-top: 16px;
@@ -65,17 +66,17 @@ export default function ProfilingRunsChart({ profiles, areAllProfilesPartitioned
             },
         },
         {
-            title: 'Row Count',
+            title: t('Row Count'),
             key: 'Row Count',
             dataIndex: 'rowCount',
         },
         {
-            title: 'Column Count',
+            title: t('Column Count'),
             key: 'Column Count',
             dataIndex: 'columnCount',
         },
         {
-            title: 'Size',
+            title: t('Size'),
             key: 'Size',
             dataIndex: 'sizeInBytes',
         },

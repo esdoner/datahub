@@ -43,6 +43,7 @@ import { useEntityRegistry } from '@app/useEntityRegistry';
 import { EntityRegistry } from '@src/entityRegistryContext';
 
 import { EntityType, FeatureFlagsConfig } from '@types';
+import { t } from '@src/i18n/utils';
 
 /**
  * The structure of our path will be
@@ -300,7 +301,7 @@ export function getPopularityColumn(tier: PopularityTier): SidebarStatsColumn | 
     const status = getBarsStatusFromPopularityTier(tier);
     if (status) {
         return {
-            title: 'Popularity',
+            title: t('Popularity'),
             content: <SidebarPopularityHeaderSection />,
         };
     }

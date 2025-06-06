@@ -6,6 +6,7 @@ import { DataContractBuilderState } from '@app/entityV2/shared/tabs/Dataset/Vali
 import ClickOutside from '@app/shared/ClickOutside';
 
 import { DataContract } from '@types';
+import { t } from '@src/i18n/utils';
 
 const modalStyle = {};
 const modalBodyStyle = {
@@ -33,7 +34,7 @@ export const DataContractBuilderModal = ({ entityUrn, initialState, onSubmit, on
 
     const modalClosePopup = () => {
         Modal.confirm({
-            title: 'Exit Editor',
+            title: t('Exit Editor'),
             content: `Are you sure you want to exit the editor? All changes will be lost`,
             onOk() {
                 onCancel?.();

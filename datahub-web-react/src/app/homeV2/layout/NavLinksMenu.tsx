@@ -17,6 +17,7 @@ import GovernMenuIcon from '@images/governMenuIcon.svg?react';
 import HelpMenuIcon from '@images/help-icon.svg?react';
 import IngestionMenuIcon from '@images/ingestionMenuIcon.svg?react';
 import SettingsMenuIcon from '@images/settingsMenuIcon.svg?react';
+import { t } from '@src/i18n/utils';
 
 const LinksWrapper = styled.div<{ areLinksHidden?: boolean }>`
     opacity: 1;
@@ -137,14 +138,14 @@ export function NavLinksMenu(props: Props) {
     const menuItems: Array<NavMenuItem> = [
         {
             icon: AnalyticsMenuIcon,
-            title: 'Analytics',
+            title: t('Analytics'),
             description: 'Explore data usage and trends',
             link: PageRoutes.ANALYTICS,
             isHidden: !showAnalytics,
         },
         {
             icon: GovernMenuIcon,
-            title: 'Govern',
+            title: t('Govern'),
             description: 'Manage data access and quality',
             link: null,
             subMenu: {
@@ -153,25 +154,25 @@ export function NavLinksMenu(props: Props) {
                 close: () => setShowGovernMenu(false),
                 items: [
                     {
-                        title: 'Glossary',
+                        title: t('Glossary'),
                         description: 'View and modify your business glossary',
                         link: PageRoutes.GLOSSARY,
                         isHidden: false,
                     },
                     {
-                        title: 'Tags',
+                        title: t('Tags'),
                         description: 'View and modify your tags',
                         link: PageRoutes.MANAGE_TAGS,
                         isHidden: false,
                     },
                     {
-                        title: 'Domains',
+                        title: t('Domains'),
                         description: 'Manage related groups of data assets',
                         link: PageRoutes.DOMAINS,
                         isHidden: false,
                     },
                     {
-                        title: 'Structured Properties',
+                        title: t('Structured Properties'),
                         showNewTag: true,
                         description: `Manage custom properties for your data assets`,
                         link: PageRoutes.STRUCTURED_PROPERTIES,
@@ -182,21 +183,21 @@ export function NavLinksMenu(props: Props) {
         },
         {
             icon: IngestionMenuIcon,
-            title: 'Ingestion',
+            title: t('Ingestion'),
             description: 'Manage data integrations and pipelines',
             link: PageRoutes.INGESTION,
             isHidden: !showIngestion,
         },
         {
             icon: SettingsMenuIcon,
-            title: 'Settings',
+            title: t('Settings'),
             description: 'Manage your account and preferences',
             link: PageRoutes.SETTINGS,
             isHidden: !showSettings,
         },
         {
             icon: HelpMenuIcon,
-            title: 'Help',
+            title: t('Help'),
             description: 'Explore help resources and documentation',
             link: null,
             isHidden: false,
@@ -206,14 +207,14 @@ export function NavLinksMenu(props: Props) {
                 close: () => setShowHelpMenu(false),
                 items: [
                     {
-                        title: 'Product Tour',
+                        title: t('Product Tour'),
                         description: 'Take a quick tour of this page',
                         isHidden: false,
                         rel: 'noopener noreferrer',
                         onClick: showOnboardingTour,
                     },
                     {
-                        title: 'GraphiQL',
+                        title: t('GraphiQL'),
                         description: 'Explore the GraphQL API',
                         link: HelpLinkRoutes.GRAPHIQL || null,
                         isHidden: false,
@@ -221,7 +222,7 @@ export function NavLinksMenu(props: Props) {
                         rel: 'noopener noreferrer',
                     },
                     {
-                        title: 'OpenAPI',
+                        title: t('OpenAPI'),
                         description: 'Explore the OpenAPI endpoints',
                         link: HelpLinkRoutes.OPENAPI,
                         isHidden: false,

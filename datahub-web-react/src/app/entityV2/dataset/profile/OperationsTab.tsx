@@ -20,6 +20,8 @@ import { GetDatasetRunsQuery, useGetDatasetRunsQuery } from '@graphql/dataset.ge
 import { DataProcessInstanceRunResultType, DataProcessRunStatus, EntityType, RelationshipDirection } from '@types';
 
 import LoadingSvg from '@images/datahub-logo-color-loading_pendulum.svg?react';
+import { t } from '@src/i18n/utils';
+
 
 const ExternalUrlLink = styled.a`
     font-size: 16px;
@@ -56,7 +58,7 @@ function getStatusForStyling(status: DataProcessRunStatus, resultType: DataProce
 
 const columns = [
     {
-        title: 'Time',
+        title: t('Time'),
         dataIndex: 'time',
         key: 'time',
         render: (value) => (
@@ -64,24 +66,24 @@ const columns = [
         ),
     },
     {
-        title: 'Duration',
+        title: t('Duration'),
         dataIndex: 'duration',
         key: 'duration',
         render: (durationMs: number) => formatDuration(durationMs),
     },
     {
-        title: 'Run ID',
+        title: t('Run ID'),
         dataIndex: 'name',
         key: 'name',
     },
     {
-        title: 'Task',
+        title: t('Task'),
         dataIndex: 'parentTemplate',
         key: 'parentTemplate',
         render: (parentTemplate) => <CompactEntityNameList entities={[parentTemplate]} />,
     },
     {
-        title: 'Status',
+        title: t('Status'),
         dataIndex: 'status',
         key: 'status',
         render: (status: any, row) => {
@@ -102,13 +104,13 @@ const columns = [
         },
     },
     {
-        title: 'Inputs',
+        title: t('Inputs'),
         dataIndex: 'inputs',
         key: 'inputs',
         render: (inputs) => <CompactEntityNameList entities={inputs} />,
     },
     {
-        title: 'Outputs',
+        title: t('Outputs'),
         dataIndex: 'outputs',
         key: 'outputs',
         render: (outputs) => <CompactEntityNameList entities={outputs} />,

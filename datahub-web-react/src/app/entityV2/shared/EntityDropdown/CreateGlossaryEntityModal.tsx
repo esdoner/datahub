@@ -210,7 +210,7 @@ function CreateGlossaryEntityModal(props: Props) {
                     </Button>
                     {isDocumentationModalVisible && (
                         <DescriptionModal
-                            title="Add Documentation"
+                            title="Add Documentations"
                             onClose={() => setIsDocumentationModalVisible(false)}
                             onSubmit={addDocumentation}
                             description={documentation}

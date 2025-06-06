@@ -19,6 +19,7 @@ import { TabRenderType } from '@app/entityV2/shared/types';
 import { useEntityRegistryV2 } from '@app/useEntityRegistry';
 import { EditColumn } from '@src/app/entity/shared/tabs/Properties/Edit/EditColumn';
 import { Maybe, StructuredProperties } from '@src/types.generated';
+import { t } from '@src/i18n/utils';
 
 const StyledTable = styled(Table)`
     &&& .ant-table-cell-with-append {
@@ -83,11 +84,11 @@ export const PropertiesTab = ({ renderType = TabRenderType.DEFAULT, properties }
     const propertyTableColumns = [
         {
             width: 210,
-            title: 'Name',
+            title: t('Name'),
             render: (propertyRow: PropertyRow) => <NameColumn propertyRow={propertyRow} filterText={filterText} />,
         },
         {
-            title: 'Value',
+            title: t('Value'),
             ellipsis: true,
             render: (propertyRow: PropertyRow) => (
                 <ValuesColumn

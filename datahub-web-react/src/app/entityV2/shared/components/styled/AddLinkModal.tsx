@@ -10,6 +10,8 @@ import { ModalButtonContainer } from '@src/app/shared/button/styledComponents';
 
 import { useAddLinkMutation } from '@graphql/mutations.generated';
 
+import { t } from '@i18n/utils';
+
 type AddLinkProps = {
     buttonProps?: Record<string, unknown>;
     refetch?: () => Promise<any>;
@@ -65,7 +67,7 @@ export const AddLinkModal = ({ buttonProps, refetch, buttonType }: AddLinkProps)
             return (
                 <Button data-testid="add-link-button" variant="outline" onClick={showModal} {...buttonProps}>
                     <PlusOutlined />
-                    Add Link
+                    { t('Add Link') }
                 </Button>
             );
         }
@@ -73,14 +75,14 @@ export const AddLinkModal = ({ buttonProps, refetch, buttonType }: AddLinkProps)
             return (
                 <AntButton data-testid="add-link-button" onClick={showModal} type="text">
                     <PlusOutlined />
-                    Add Link
+                    { t('Add Link') }
                 </AntButton>
             );
         }
         return (
             <Button variant="outline" data-testid="add-link-button" onClick={showModal} {...buttonProps}>
                 <PlusOutlined />
-                Add Link
+                { t('Add Link') }
             </Button>
         );
     };
@@ -89,7 +91,7 @@ export const AddLinkModal = ({ buttonProps, refetch, buttonType }: AddLinkProps)
         <>
             {renderButton(buttonType)}
             <Modal
-                title="Add Link"
+                title={ t('Add Link') }
                 visible={isModalVisible}
                 destroyOnClose
                 onCancel={handleClose}

@@ -11,6 +11,7 @@ import { useUserPersona } from '@app/homeV2/persona/useUserPersona';
 import { PersonaType } from '@app/homeV2/shared/types';
 import OnboardingContext from '@app/onboarding/OnboardingContext';
 import { useAppConfig } from '@app/useAppConfig';
+import { t } from '@src/i18n/utils';
 
 const Header = styled.div`
     display: flex;
@@ -108,14 +109,14 @@ const SkeletonButton = styled(Skeleton.Button)<{ width?: string }>`
 const ALL_GUIDES = [
     {
         id: 'integrations',
-        title: 'Connect Sources',
+        title: t('Connect Sources'),
         url: 'https://docs.datahub.com/docs/ui-ingestion',
         icon: ApiOutlined,
         personas: [PersonaType.TECHNICAL_USER, PersonaType.DATA_ENGINEER],
     },
     {
         id: 'features',
-        title: 'Feature Guides',
+        title: t('Feature Guides'),
         url: 'https://docs.datahub.com/docs/category/features?utm_source=acryl_datahub_app',
         icon: HelpCenterOutlined,
         personas: [
@@ -128,21 +129,21 @@ const ALL_GUIDES = [
     },
     {
         id: 'tutorials',
-        title: 'How-To Tutorials',
+        title: t('How-To Tutorials'),
         url: 'https://youtube.com/playlist?list=PLdCtLs64vZvErAXMiqUYH9e63wyDaMBgg&utm_source=acryl_datahub_app&utm_content=tutorials',
         icon: OndemandVideoOutlined,
         personas: [PersonaType.TECHNICAL_USER, PersonaType.DATA_ENGINEER, PersonaType.DATA_STEWARD],
     },
     {
         id: 'case-studies',
-        title: 'Case Studies',
+        title: t('Case Studies'),
         url: 'https://www.acryldata.io/customer-stories?utm_source=acryl_datahub_app&utm_content=case_studies',
         icon: OndemandVideoOutlined,
         personas: [PersonaType.BUSINESS_USER, PersonaType.DATA_LEADER],
     },
     {
         id: 'blog',
-        title: 'Subscribe to the Blog',
+        title: t('Subscribe to the Blog'),
         url: 'https://www.medium.com/datahub-project',
         icon: AutoStoriesOutlinedIcon,
         personas: [

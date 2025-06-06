@@ -4,6 +4,7 @@ import ActionDropdown from '@app/entityV2/shared/components/styled/search/action
 import EditTagTermsModal, { OperationType } from '@app/shared/tags/AddTagsTermsModal';
 
 import { EntityType } from '@types';
+import { t } from '@src/i18n/utils';
 
 type Props = {
     urns: Array<string>;
@@ -22,14 +23,14 @@ export default function GlossaryTermsDropdown({ urns, disabled = false, refetch 
                 name="Glossary Terms"
                 actions={[
                     {
-                        title: 'Add Glossary Terms',
+                        title: t('Add Glossary Terms'),
                         onClick: () => {
                             setOperationType(OperationType.ADD);
                             setIsEditModalVisible(true);
                         },
                     },
                     {
-                        title: 'Remove Glossary Terms',
+                        title: t('Remove Glossary Terms'),
                         onClick: () => {
                             setOperationType(OperationType.REMOVE);
                             setIsEditModalVisible(true);

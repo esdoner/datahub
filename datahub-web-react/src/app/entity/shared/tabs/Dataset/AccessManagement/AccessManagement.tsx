@@ -9,6 +9,7 @@ import AccessManagerDescription from '@app/entity/shared/tabs/Dataset/AccessMana
 import { handleAccessRoles } from '@app/entity/shared/tabs/Dataset/AccessManagement/utils';
 
 import { useGetExternalRolesQuery } from '@graphql/dataset.generated';
+import { t } from '@src/i18n/utils';
 
 const StyledTable = styled(Table)`
     overflow: inherit;
@@ -72,12 +73,12 @@ export default function AccessManagement() {
 
     const columns = [
         {
-            title: 'Role Name',
+            title: t('Role Name'),
             dataIndex: 'name',
             key: 'name',
         },
         {
-            title: 'Description',
+            title: t('Description'),
             dataIndex: 'description',
             key: 'description',
             render: (roleDescription) => {
@@ -85,12 +86,12 @@ export default function AccessManagement() {
             },
         },
         {
-            title: 'Access Type',
+            title: t('Access Type'),
             dataIndex: 'accessType',
             key: 'accessType',
         },
         {
-            title: 'Access',
+            title: t('Access'),
             dataIndex: 'hasAccess',
             key: 'hasAccess',
             render: (hasAccess, record) => {

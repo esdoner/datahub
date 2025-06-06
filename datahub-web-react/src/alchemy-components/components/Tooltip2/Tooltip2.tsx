@@ -1,6 +1,7 @@
 import { Popover } from '@components';
 import { TooltipProps } from 'antd';
 import * as React from 'react';
+import { t } from '@i18n/utils';
 
 import {
     Container,

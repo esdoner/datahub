@@ -4,6 +4,7 @@ import ActionDropdown from '@app/entityV2/shared/components/styled/search/action
 import EditTagTermsModal, { OperationType } from '@app/shared/tags/AddTagsTermsModal';
 
 import { EntityType } from '@types';
+import { t } from '@src/i18n/utils';
 
 type Props = {
     urns: Array<string>;
@@ -22,14 +23,14 @@ export default function TagsDropdown({ urns, disabled = false, refetch }: Props)
                 name="Tags"
                 actions={[
                     {
-                        title: 'Add tags',
+                        title: t('Add tags'),
                         onClick: () => {
                             setOperationType(OperationType.ADD);
                             setIsEditModalVisible(true);
                         },
                     },
                     {
-                        title: 'Remove tags',
+                        title: t('Remove tags'),
                         onClick: () => {
                             setOperationType(OperationType.REMOVE);
                             setIsEditModalVisible(true);

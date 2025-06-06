@@ -11,6 +11,7 @@ import { useGetTimelineQuery } from '@graphql/timeline.generated';
 import { ChangeCategoryType } from '@types';
 
 import TimelineIcon from '@images/timeline-icon.svg?react';
+import { t } from '@src/i18n/utils';
 
 const TimeLine = styled(VerticalTimeline)`
     svg {
@@ -57,7 +58,7 @@ export const SchemaTimelineSection = () => {
                 title: `${
                     change.parameters?.find((parameter) => parameter.key === 'fieldPath')?.value
                 } was ${change.operation?.toLowerCase()}ed.`,
-                subtitle: 'subtitle',
+                subtitle: t('subtitle'),
                 desc: 'description',
                 time,
             };

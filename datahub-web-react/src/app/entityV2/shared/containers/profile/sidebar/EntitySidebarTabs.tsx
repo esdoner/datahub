@@ -7,6 +7,7 @@ import styled from 'styled-components/macro';
 import { useBaseEntity, useEntityData } from '@app/entity/shared/EntityContext';
 import { EntitySidebarTab } from '@app/entityV2/shared/types';
 import EntitySidebarContext from '@app/sharedV2/EntitySidebarContext';
+import { t } from '@i18n/utils';
 
 type Props = {
     tabs: EntitySidebarTab[];
@@ -200,7 +201,7 @@ const TabTextWithTooltip = ({ text, isSelected }: { text: string; isSelected?: b
     return (
         <Tooltip title={isOverflowing ? tooltipText : null} placement="right">
             <TabText ref={textRef} $isSelected={isSelected}>
-                {text}
+                {t(text)}
             </TabText>
         </Tooltip>
     );

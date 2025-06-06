@@ -2,6 +2,7 @@ import { Typography } from 'antd';
 import React from 'react';
 
 import { OnboardingStep } from '@app/onboarding/OnboardingStep';
+import { t } from '@src/i18n/utils';
 
 export const DOMAINS_INTRO_ID = 'domains-intro';
 export const DOMAINS_CREATE_DOMAIN_ID = 'domains-create-domain';
@@ -9,7 +10,7 @@ export const DOMAINS_CREATE_DOMAIN_ID = 'domains-create-domain';
 export const DomainsOnboardingConfig: OnboardingStep[] = [
     {
         id: DOMAINS_INTRO_ID,
-        title: 'Domains',
+        title: t('Domains'),
         content: (
             <Typography.Paragraph>
                 <p>
@@ -32,7 +33,7 @@ export const DomainsOnboardingConfig: OnboardingStep[] = [
     {
         id: DOMAINS_CREATE_DOMAIN_ID,
         selector: `#${DOMAINS_CREATE_DOMAIN_ID}`,
-        title: 'Create a new Domain',
+        title: t('Create a new Domain'),
         content: (
             <Typography.Paragraph>
                 <p>

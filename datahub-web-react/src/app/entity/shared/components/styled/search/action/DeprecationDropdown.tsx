@@ -6,6 +6,7 @@ import ActionDropdown from '@app/entity/shared/components/styled/search/action/A
 import { handleBatchError } from '@app/entity/shared/utils';
 
 import { useBatchUpdateDeprecationMutation } from '@graphql/mutations.generated';
+import { t } from '@src/i18n/utils';
 
 type Props = {
     urns: Array<string>;
@@ -50,13 +51,13 @@ export default function DeprecationDropdown({ urns, disabled = false, refetch }:
                 name="Deprecation"
                 actions={[
                     {
-                        title: 'Mark as deprecated',
+                        title: t('Mark as deprecated'),
                         onClick: () => {
                             setIsEditModalVisible(true);
                         },
                     },
                     {
-                        title: 'Mark as un-deprecated',
+                        title: t('Mark as un-deprecated'),
                         onClick: () => {
                             Modal.confirm({
                                 title: `Confirm Mark as un-deprecated`,

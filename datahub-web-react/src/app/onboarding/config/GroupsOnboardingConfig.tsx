@@ -1,6 +1,7 @@
 import { Typography } from 'antd';
 import React from 'react';
 
+import { t } from '@src/i18n/utils';
 import { OnboardingStep } from '@app/onboarding/OnboardingStep';
 
 export const GROUPS_INTRO_ID = 'groups-intro';
@@ -9,7 +10,7 @@ export const GROUPS_CREATE_GROUP_ID = 'groups-create-group';
 export const GroupsOnboardingConfig: OnboardingStep[] = [
     {
         id: GROUPS_INTRO_ID,
-        title: 'Groups',
+        title: t('Groups'),
         content: (
             <Typography.Paragraph>
                 <p>
@@ -40,7 +41,7 @@ export const GroupsOnboardingConfig: OnboardingStep[] = [
     {
         id: GROUPS_CREATE_GROUP_ID,
         selector: `#${GROUPS_CREATE_GROUP_ID}`,
-        title: 'Create a new Group',
+        title: t('Create a new Group'),
         content: (
             <Typography.Paragraph>
                 <p>

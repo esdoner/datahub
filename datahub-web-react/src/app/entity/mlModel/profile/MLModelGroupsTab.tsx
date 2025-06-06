@@ -9,6 +9,7 @@ import { useEntityRegistry } from '@app/useEntityRegistry';
 
 import { GetMlModelQuery } from '@graphql/mlModel.generated';
 import { EntityType, MlModelGroup } from '@types';
+import { t } from '@src/i18n/utils';
 
 const TabContent = styled.div`
     padding: 16px;
@@ -22,7 +23,7 @@ export default function MLModelGroupsTab() {
 
     const propertyTableColumns: ColumnsType<MlModelGroup> = [
         {
-            title: 'Group',
+            title: t('Group'),
             dataIndex: 'name',
             render: (name, record) => {
                 return (
@@ -33,7 +34,7 @@ export default function MLModelGroupsTab() {
             },
         },
         {
-            title: 'Description',
+            title: t('Description'),
             dataIndex: 'description',
         },
     ];

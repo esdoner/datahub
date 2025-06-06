@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import DataProfileView from '@app/entityV2/dataset/profile/stats/snapshot/SnapshotStatsView';
 
 import { DatasetProfile } from '@types';
+import { t } from '@src/i18n/utils';
 
 export const ChartTable = styled(Table)`
     margin: 12px;
@@ -40,7 +41,7 @@ export default function ProfilingRunsChart({ profiles }: Props) {
 
     const tableColumns = [
         {
-            title: 'Recent Profiles',
+            title: t('Recent Profiles'),
             key: 'Recent Profiles',
             dataIndex: 'timestamp',
             render: (title, record, index) => {
@@ -52,12 +53,12 @@ export default function ProfilingRunsChart({ profiles }: Props) {
             },
         },
         {
-            title: 'Row Count',
+            title: t('Row Count'),
             key: 'Row Count',
             dataIndex: 'rowCount',
         },
         {
-            title: 'Column Count',
+            title: t('Column Count'),
             key: 'Column Count',
             dataIndex: 'columnCount',
         },

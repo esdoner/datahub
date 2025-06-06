@@ -11,6 +11,7 @@ import { formatDetailedDuration } from '@src/app/shared/time/timeUtils';
 
 import { GetDataProcessInstanceQuery } from '@graphql/dataProcessInstance.generated';
 import { DataProcessInstanceRunResultType, MlHyperParam, MlMetric } from '@types';
+import { t } from '@src/i18n/utils';
 
 const TabContent = styled.div`
     padding: 16px;
@@ -31,12 +32,12 @@ const InfoItemContent = styled.div`
 
 const propertyTableColumns = [
     {
-        title: 'Name',
+        title: t('Name'),
         dataIndex: 'name',
         width: 450,
     },
     {
-        title: 'Value',
+        title: t('Value'),
         dataIndex: 'value',
     },
 ];

@@ -2,6 +2,7 @@ import { Typography } from 'antd';
 import React from 'react';
 
 import { OnboardingStep } from '@app/onboarding/OnboardingStep';
+import { t } from '@src/i18n/utils';
 
 export const SEARCH_RESULTS_FILTERS_ID = 'search-results-filters';
 export const SEARCH_RESULTS_ADVANCED_SEARCH_ID = 'search-results-advanced-search';
@@ -12,7 +13,7 @@ export const SearchOnboardingConfig: OnboardingStep[] = [
     {
         id: SEARCH_RESULTS_FILTERS_ID,
         selector: `#${SEARCH_RESULTS_FILTERS_ID}`,
-        title: '🕵️ Narrow your search',
+        title: t('🕵️ Narrow your search'),
         content: (
             <Typography.Paragraph>
                 Quickly find relevant assets by applying one or more filters. Try filtering by <strong>Type</strong>,{' '}
@@ -23,7 +24,7 @@ export const SearchOnboardingConfig: OnboardingStep[] = [
     {
         id: SEARCH_RESULTS_ADVANCED_SEARCH_ID,
         selector: `#${SEARCH_RESULTS_ADVANCED_SEARCH_ID}`,
-        title: '💪 Dive deeper with advanced filters',
+        title: t('💪 Dive deeper with advanced filters'),
         content: (
             <Typography.Paragraph>
                 <strong>Advanced Filters</strong> offer additional capabilities to create more specific search queries.
@@ -33,7 +34,7 @@ export const SearchOnboardingConfig: OnboardingStep[] = [
     {
         id: SEARCH_RESULTS_BROWSE_SIDEBAR_ID,
         selector: `#${SEARCH_RESULTS_BROWSE_SIDEBAR_ID}`,
-        title: '🧭 Explore and refine your search by platform',
+        title: t('🧭 Explore and refine your search by platform'),
         style: { minWidth: '425px' },
         content: (
             <Typography.Paragraph>
@@ -47,7 +48,7 @@ export const SearchOnboardingConfig: OnboardingStep[] = [
         id: SEARCH_RESULTS_FILTERS_V2_INTRO,
         prerequisiteStepId: SEARCH_RESULTS_FILTERS_ID,
         selector: `#${SEARCH_RESULTS_FILTERS_V2_INTRO}`,
-        title: 'Filters Have Moved',
+        title: t('Filters Have Moved'),
         content: (
             <Typography.Paragraph>
                 Quickly find relevant assets with our new and improved filter interface! Our latest update has relocated

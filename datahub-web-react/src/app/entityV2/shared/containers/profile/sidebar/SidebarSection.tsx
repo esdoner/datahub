@@ -5,6 +5,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { CountStyle } from '@app/entityV2/shared/SidebarStyledComponents';
+import { t } from '@i18n/utils';
 
 const Container = styled.div`
     margin-left: 7px;
@@ -108,7 +109,7 @@ export const SidebarSection = ({
                 header={
                     <>
                         <SectionHeader collapsible={collapsible}>
-                            <Title ellipsis={{ tooltip: true }}>{title}</Title>
+                            <Title ellipsis={{ tooltip: true }}>{t(title)}</Title>
                             {count > 0 && (
                                 <CountStyle>
                                     {showFullCount ? <>{count}</> : <>{count > 10 ? '10+' : count}</>}

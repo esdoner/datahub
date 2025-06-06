@@ -40,6 +40,7 @@ import {
     SearchResults,
     StructuredPropertyEntity,
 } from '@src/types.generated';
+import { t } from '@src/i18n/utils';
 
 interface Props {
     searchQuery: string;
@@ -135,7 +136,7 @@ const StructuredPropsTable = ({
 
     const columns = [
         {
-            title: 'Name',
+            title: t('Name'),
             key: 'name',
             render: (record) => {
                 return (
@@ -170,7 +171,7 @@ const StructuredPropsTable = ({
             },
         },
         {
-            title: 'Entity Types',
+            title: t('Entity Types'),
             key: 'entityTypes',
             width: '270px',
             render: (record) => {
@@ -207,7 +208,7 @@ const StructuredPropsTable = ({
             },
         },
         {
-            title: 'Creation Date',
+            title: t('Creation Date'),
             key: 'creationDate',
             render: (record) => {
                 const createdTime = record.entity.definition.created?.time;
@@ -226,7 +227,7 @@ const StructuredPropsTable = ({
         },
 
         {
-            title: 'Created By',
+            title: t('Created By'),
             key: 'createdBy',
             render: (record) => {
                 const createdByUser = record.entity.definition?.created?.actor;

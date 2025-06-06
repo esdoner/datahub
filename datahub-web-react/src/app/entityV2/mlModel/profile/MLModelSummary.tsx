@@ -13,6 +13,7 @@ import { colors } from '@src/alchemy-components/theme';
 
 import { GetMlModelQuery } from '@graphql/mlModel.generated';
 import { EntityType, MlHyperParam, MlMetric } from '@types';
+import { t } from '@src/i18n/utils';
 
 const TabContent = styled.div`
     padding: 16px;
@@ -47,12 +48,12 @@ export default function MLModelSummary() {
 
     const propertyTableColumns = [
         {
-            title: 'Name',
+            title: t('Name'),
             dataIndex: 'name',
             width: 450,
         },
         {
-            title: 'Value',
+            title: t('Value'),
             dataIndex: 'value',
         },
     ];

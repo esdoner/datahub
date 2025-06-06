@@ -18,6 +18,8 @@ import { getAssetDescriptionDetails } from '@app/entityV2/shared/tabs/Documentat
 import { EDITED_DESCRIPTIONS_CACHE_NAME } from '@app/entityV2/shared/utils';
 import { Button } from '@src/alchemy-components';
 
+import { t } from '@i18n/utils'
+
 const DocumentationContainer = styled.div`
     margin: 0 32px;
     padding: 40px 0;
@@ -125,7 +127,7 @@ export const DocumentationTab = ({ properties }: { properties?: Props }) => {
                             data-testid="add-documentation"
                             onClick={() => routeToTab({ tabName: 'Documentation', tabParams: { editing: true } })}
                         >
-                            <PlusOutlined /> Add Documentation
+                            <PlusOutlined /> { t('Add Documentation') }
                         </Button>
                     </EmptyTab>
                 </EmptyTabWrapper>

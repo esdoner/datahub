@@ -10,6 +10,7 @@ import { TitleAction } from '@app/entityV2/shared/containers/profile/sidebar/Tit
 import ViewInPlatform from '@app/entityV2/shared/externalUrl/ViewInPlatform';
 import { EntitySidebarTab } from '@app/entityV2/shared/types';
 import EntitySidebarContext from '@app/sharedV2/EntitySidebarContext';
+import { t } from '@i18n/utils'
 
 const Controls = styled.div<{ isCollapsed: boolean }>`
     display: flex;
@@ -74,7 +75,7 @@ export default function SidebarCollapsibleHeader({ currentTab, headerDropdownIte
             {!isClosed && currentTab && (
                 <Title>
                     <Top>
-                        <TabTitle>{currentTabName}</TabTitle>
+                        <TabTitle>{t(currentTabName)}</TabTitle>
                         <RightActions>
                             {actionType && <TitleAction actionType={actionType} icon={icon} />}
                             {forLineage && (

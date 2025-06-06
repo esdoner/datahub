@@ -13,6 +13,7 @@ import { useEntityRegistry } from '@app/useEntityRegistry';
 
 import { useUpdateDescriptionMutation } from '@graphql/mutations.generated';
 import { MlFeature, MlFeatureDataType, MlPrimaryKey } from '@types';
+import { t } from '@src/i18n/utils';
 
 const FeaturesContainer = styled.div`
     margin-bottom: 100px;
@@ -20,7 +21,7 @@ const FeaturesContainer = styled.div`
 
 const defaultColumns = [
     {
-        title: 'Type',
+        title: t('Type'),
         dataIndex: 'dataType',
         key: 'dataType',
         width: 100,
@@ -53,7 +54,7 @@ export default function TableOfMlFeatures({ features }: Props) {
     });
 
     const nameColumn = {
-        title: 'Name',
+        title: t('Name'),
         dataIndex: 'name',
         key: 'name',
         width: 100,
@@ -65,7 +66,7 @@ export default function TableOfMlFeatures({ features }: Props) {
     };
 
     const descriptionColumn = {
-        title: 'Description',
+        title: t('Description'),
         dataIndex: 'description',
         key: 'description',
         render: (_, feature: MlFeature | MlPrimaryKey, index: number) => (
@@ -94,7 +95,7 @@ export default function TableOfMlFeatures({ features }: Props) {
 
     const tagColumn = {
         width: 125,
-        title: 'Tags',
+        title: t('Tags'),
         dataIndex: 'tags',
         key: 'tags',
         render: (_, feature: MlFeature | MlPrimaryKey, rowIndex: number) => (
@@ -114,7 +115,7 @@ export default function TableOfMlFeatures({ features }: Props) {
 
     const termColumn = {
         width: 125,
-        title: 'Terms',
+        title: t('Terms'),
         dataIndex: 'glossaryTerms',
         key: 'glossaryTerms',
         render: (_, feature: MlFeature | MlPrimaryKey, rowIndex: number) => (
@@ -133,7 +134,7 @@ export default function TableOfMlFeatures({ features }: Props) {
     };
 
     const primaryKeyColumn = {
-        title: 'Primary Key',
+        title: t('Primary Key'),
         dataIndex: 'primaryKey',
         key: 'primaryKey',
         render: (_: any, record: MlFeature | MlPrimaryKey) =>

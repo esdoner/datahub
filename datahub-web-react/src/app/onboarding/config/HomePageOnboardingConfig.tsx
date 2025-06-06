@@ -5,6 +5,7 @@ import { ANTD_GRAY } from '@app/entity/shared/constants';
 import { OnboardingStep } from '@app/onboarding/OnboardingStep';
 
 import dataHubFlowDiagram from '@images/datahub-flow-diagram-light.png';
+import { t } from '@src/i18n/utils';
 
 export const GLOBAL_WELCOME_TO_DATAHUB_ID = 'global-welcome-to-datahub';
 export const HOME_PAGE_INGESTION_ID = 'home-page-ingestion';
@@ -72,7 +73,7 @@ export const HomePageOnboardingConfig: OnboardingStep[] = [
     {
         id: HOME_PAGE_INGESTION_ID,
         selector: `#${HOME_PAGE_INGESTION_ID}`,
-        title: 'Ingest Data',
+        title: t('Ingest Data'),
         content: (
             <Typography.Paragraph>
                 Start integrating your data sources immediately by navigating to the <strong>Ingestion</strong> page.
@@ -82,7 +83,7 @@ export const HomePageOnboardingConfig: OnboardingStep[] = [
     {
         id: HOME_PAGE_DOMAINS_ID,
         selector: `#${HOME_PAGE_DOMAINS_ID}`,
-        title: 'Explore by Domain',
+        title: t('Explore by Domain'),
         content: (
             <Typography.Paragraph>
                 Here are your organization&apos;s <strong>Domains</strong>. Domains are collections of data assets -
@@ -94,7 +95,7 @@ export const HomePageOnboardingConfig: OnboardingStep[] = [
     {
         id: HOME_PAGE_PLATFORMS_ID,
         selector: `#${HOME_PAGE_PLATFORMS_ID}`,
-        title: 'Explore by Platform',
+        title: t('Explore by Platform'),
         content: (
             <Typography.Paragraph>
                 Here are your organization&apos;s <strong>Data Platforms</strong>. Data Platforms represent specific
@@ -106,13 +107,13 @@ export const HomePageOnboardingConfig: OnboardingStep[] = [
     {
         id: HOME_PAGE_MOST_POPULAR_ID,
         selector: `#${HOME_PAGE_MOST_POPULAR_ID}`,
-        title: 'Explore Most Popular',
+        title: t('Explore Most Popular'),
         content: "Here you'll find the assets that are viewed most frequently within your organization.",
     },
     {
         id: HOME_PAGE_SEARCH_BAR_ID,
         selector: `#${HOME_PAGE_SEARCH_BAR_ID}`,
-        title: 'Find your Data 🔍',
+        title: t('Find your Data 🔍'),
         content: (
             <Typography.Paragraph>
                 <p>

@@ -70,6 +70,7 @@ import { GetDatasetQuery, useGetDatasetQuery, useUpdateDatasetMutation } from '@
 import { Dataset, DatasetProperties, EntityType, FeatureFlagsConfig, SearchResult } from '@types';
 
 import GovernMenuIcon from '@images/governMenuIcon.svg?react';
+import { t } from '@i18n/utils';
 
 const SUBTYPES = {
     VIEW: 'view',
@@ -158,25 +159,25 @@ export class DatasetEntity implements Entity<Dataset> {
                     getDynamicName: ColumnTabNameHeader,
                 },
                 {
-                    name: 'View Definition',
+                    name: t('View Definition'),
                     component: ViewDefinitionTab,
                     icon: CodeOutlined,
                     display: {
                         visible: (_, dataset: GetDatasetQuery) =>
                             !!dataset?.dataset?.viewProperties?.logic ||
                             !!dataset?.dataset?.subTypes?.typeNames
-                                ?.map((t) => t.toLocaleLowerCase())
+                                ?.map((ts) => ts.toLocaleLowerCase())
                                 .includes(SUBTYPES.VIEW.toLocaleLowerCase()),
                         enabled: (_, dataset: GetDatasetQuery) => !!dataset?.dataset?.viewProperties?.logic,
                     },
                 },
                 {
-                    name: 'Documentation',
+                    name: t('Documentation'),
                     component: DocumentationTab,
                     icon: FileOutlined,
                 },
                 {
-                    name: 'Preview',
+                    name: t('Preview'),
                     component: EmbedTab,
                     icon: EyeOutlined,
                     display: {
@@ -185,12 +186,12 @@ export class DatasetEntity implements Entity<Dataset> {
                     },
                 },
                 {
-                    name: 'Lineage',
+                    name: t('Lineage'),
                     component: LineageTab,
                     icon: PartitionOutlined,
                 },
                 {
-                    name: 'Properties',
+                    name: t('Properties'),
                     component: PropertiesTab,
                     icon: UnorderedListOutlined,
                     getDynamicName: (_, dataset: GetDatasetQuery, loading) => {
@@ -198,11 +199,11 @@ export class DatasetEntity implements Entity<Dataset> {
                         const structuredPropertiesCount =
                             dataset?.dataset?.structuredProperties?.properties?.length || 0;
                         const propertiesCount = customPropertiesCount + structuredPropertiesCount;
-                        return <TabNameWithCount name="Properties" count={propertiesCount} loading={loading} />;
+                        return <TabNameWithCount name={t("Properties")} count={propertiesCount} loading={loading} />;
                     },
                 },
                 {
-                    name: 'Queries',
+                    name: t('Queries'),
                     component: QueriesTab,
                     icon: ConsoleSqlOutlined,
                     display: {
@@ -211,7 +212,7 @@ export class DatasetEntity implements Entity<Dataset> {
                     },
                 },
                 {
-                    name: 'Stats',
+                    name: t('Stats'),
                     component: StatsTab,
                     icon: FundOutlined,
                     display: {
@@ -224,12 +225,12 @@ export class DatasetEntity implements Entity<Dataset> {
                     },
                 },
                 {
-                    name: 'Quality',
+                    name: t('Quality'),
                     component: AcrylValidationsTab, // Use SaaS specific Validations Tab.
                     icon: CheckCircleOutlined,
                 },
                 {
-                    name: 'Governance',
+                    name: t('Governance'),
                     icon: () => (
                         <span
                             style={{
@@ -243,7 +244,7 @@ export class DatasetEntity implements Entity<Dataset> {
                     component: GovernanceTab,
                 },
                 {
-                    name: 'Runs', // TODO: Rename this to DatasetRunsTab.
+                    name: t('Runs'), // TODO: Rename this to DatasetRunsTab.
                     component: OperationsTab,
                     display: {
                         visible: (_, dataset: GetDatasetQuery) => {
@@ -255,7 +256,7 @@ export class DatasetEntity implements Entity<Dataset> {
                     },
                 },
                 {
-                    name: 'Access Management',
+                    name: t('Access Management'),
                     component: AccessManagement,
                     icon: UnlockOutlined,
                     display: {
@@ -264,12 +265,12 @@ export class DatasetEntity implements Entity<Dataset> {
                     },
                 },
                 {
-                    name: 'Incidents',
+                    name: t('Incidents'),
                     icon: WarningOutlined,
                     component: IncidentTab,
                     getDynamicName: (_, dataset, loading) => {
                         const activeIncidentCount = dataset?.dataset?.activeIncidents?.total;
-                        return <TabNameWithCount name="Incidents" count={activeIncidentCount} loading={loading} />;
+                        return <TabNameWithCount name={t("Incidents")} count={activeIncidentCount} loading={loading} />;
                     },
                 },
             ]}

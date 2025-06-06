@@ -23,6 +23,7 @@ import { useEntityRegistry } from '@app/useEntityRegistry';
 import { useBatchAssignRoleMutation } from '@graphql/mutations.generated';
 import { useListRolesQuery } from '@graphql/role.generated';
 import { CorpUser, DataHubPolicy, DataHubRole } from '@types';
+import { t } from '@src/i18n/utils';
 
 const SourceContainer = styled.div`
     overflow: auto;
@@ -150,7 +151,7 @@ export const ManageRoles = () => {
 
     const tableColumns = [
         {
-            title: 'Name',
+            title: t('Name'),
             dataIndex: 'name',
             key: 'name',
             render: (_, record: any) => {
@@ -167,13 +168,13 @@ export const ManageRoles = () => {
             },
         },
         {
-            title: 'Description',
+            title: t('Description'),
             dataIndex: 'description',
             key: 'description',
             render: (description: string) => description || '',
         },
         {
-            title: 'Users',
+            title: t('Users'),
             dataIndex: 'users',
             key: 'users',
             render: (_: any, record: any) => {

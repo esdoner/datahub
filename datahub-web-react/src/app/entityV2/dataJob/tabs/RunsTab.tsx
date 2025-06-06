@@ -18,6 +18,7 @@ import { useGetDataJobRunsQuery } from '@graphql/dataJob.generated';
 import { DataProcessInstanceRunResultType, DataProcessRunStatus } from '@types';
 
 import LoadingSvg from '@images/datahub-logo-color-loading_pendulum.svg?react';
+import { t } from '@src/i18n/utils';
 
 const ExternalUrlLink = styled.a`
     font-size: 16px;
@@ -54,7 +55,7 @@ function getStatusForStyling(status: DataProcessRunStatus, resultType: DataProce
 
 const columns = [
     {
-        title: 'Time',
+        title: t('Time'),
         dataIndex: 'time',
         key: 'time',
         render: (value) => (
@@ -62,12 +63,12 @@ const columns = [
         ),
     },
     {
-        title: 'Run ID',
+        title: t('Run ID'),
         dataIndex: 'name',
         key: 'name',
     },
     {
-        title: 'Status',
+        title: t('Status'),
         dataIndex: 'status',
         key: 'status',
         render: (status: any, row) => {
@@ -88,14 +89,14 @@ const columns = [
         },
     },
     {
-        title: 'Inputs',
+        title: t('Inputs'),
         dataIndex: 'inputs',
         key: 'inputs',
         render: (inputs) => <CompactEntityNameList entities={inputs} placement="right" />,
         width: 150,
     },
     {
-        title: 'Outputs',
+        title: t('Outputs'),
         dataIndex: 'outputs',
         key: 'outputs',
         render: (outputs) => <CompactEntityNameList entities={outputs} placement="right" />,

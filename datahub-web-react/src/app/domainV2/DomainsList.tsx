@@ -22,6 +22,7 @@ import { useEntityRegistry } from '@app/useEntityRegistry';
 
 import { useListDomainsQuery } from '@graphql/domain.generated';
 import { EntityType } from '@types';
+import { t } from '@src/i18n/utils';
 
 const DomainsContainer = styled.div``;
 
@@ -85,7 +86,7 @@ export const DomainsList = () => {
 
     const allColumns = [
         {
-            title: 'Name',
+            title: t('Name'),
             dataIndex: '',
             key: 'name',
             sorter: (sourceA, sourceB) => {
@@ -101,7 +102,7 @@ export const DomainsList = () => {
             ),
         },
         {
-            title: 'Owners',
+            title: t('Owners'),
             dataIndex: 'ownership',
             width: '10%',
             key: 'ownership',

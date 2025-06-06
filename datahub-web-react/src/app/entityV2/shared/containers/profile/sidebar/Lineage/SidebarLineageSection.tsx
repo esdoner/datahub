@@ -22,6 +22,8 @@ import UpstreamHealth from '@src/app/entityV2/shared/embed/UpstreamHealth/Upstre
 
 import { useGetSearchAcrossLineageCountsQuery } from '@graphql/lineage.generated';
 
+import { t } from '@i18n/utils'
+
 const Section = styled.div`
     display: flex;
     align-items: start;
@@ -116,7 +118,7 @@ const SidebarLineageSection = () => {
                             >
                                 <DirectionHeader>
                                     <StyledUpOutlined />
-                                    <DirectionText>UPSTREAM</DirectionText>
+                                    <DirectionText>{t('UPSTREAM')}</DirectionText>
                                 </DirectionHeader>
                             </Tooltip>
                             <SummaryText>
@@ -133,7 +135,7 @@ const SidebarLineageSection = () => {
                             >
                                 <DirectionHeader>
                                     <StyledDownOutlined />
-                                    <DirectionText>DOWNSTREAM</DirectionText>
+                                    <DirectionText>{t('DOWNSTREAM')}</DirectionText>
                                 </DirectionHeader>
                             </Tooltip>
                             <SummaryText>

@@ -3,6 +3,7 @@ import { useReactiveVar } from '@apollo/client';
 import { Button, Divider, Form, Image, Input, message } from 'antd';
 import * as QueryString from 'query-string';
 import React, { useCallback, useState } from 'react';
+import { t } from '@src/i18n/utils';
 import { Redirect, useLocation } from 'react-router';
 import styled, { useTheme } from 'styled-components/macro';
 
@@ -156,7 +157,7 @@ export const LogIn: React.VFC<LogInProps> = () => {
                     <SsoDivider />
                     <SsoButton type="primary" href="/sso" block htmlType="submit" className={styles.sso_button}>
                         <LoginLogo />
-                        <SsoTextSpan>Sign in with SSO</SsoTextSpan>
+                        <SsoTextSpan>{ t("Sign in with SSO") }</SsoTextSpan>
                         <span />
                     </SsoButton>
                 </div>

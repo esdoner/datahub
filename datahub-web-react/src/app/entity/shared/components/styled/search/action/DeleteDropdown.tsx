@@ -5,6 +5,7 @@ import ActionDropdown from '@app/entity/shared/components/styled/search/action/A
 import { handleBatchError } from '@app/entity/shared/utils';
 
 import { useBatchUpdateSoftDeletedMutation } from '@graphql/mutations.generated';
+import { t } from '@src/i18n/utils';
 
 type Props = {
     urns: Array<string>;
@@ -48,7 +49,7 @@ export default function DeleteDropdown({ urns, disabled = false, refetch }: Prop
                 name="Delete"
                 actions={[
                     {
-                        title: 'Mark as deleted',
+                        title: t('Mark as deleted'),
                         onClick: () => {
                             Modal.confirm({
                                 title: `Confirm Delete`,

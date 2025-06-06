@@ -2,6 +2,7 @@ import { Typography } from 'antd';
 import React from 'react';
 
 import { OnboardingStep } from '@app/onboarding/OnboardingStep';
+import { t } from '@src/i18n/utils';
 
 export const USERS_INTRO_ID = 'users-intro';
 export const USERS_SSO_ID = 'users-sso';
@@ -11,7 +12,7 @@ export const USERS_ASSIGN_ROLE_ID = 'users-assign-role';
 export const UsersOnboardingConfig: OnboardingStep[] = [
     {
         id: USERS_INTRO_ID,
-        title: 'Users',
+        title: t('Users'),
         content: (
             <Typography.Paragraph>
                 <p>
@@ -25,7 +26,7 @@ export const UsersOnboardingConfig: OnboardingStep[] = [
     },
     {
         id: USERS_SSO_ID,
-        title: 'Configuring Single Sign-On (SSO)',
+        title: t('Configuring Single Sign-On (SSO)'),
         content: (
             <Typography.Paragraph>
                 <p>
@@ -49,7 +50,7 @@ export const UsersOnboardingConfig: OnboardingStep[] = [
     {
         id: USERS_INVITE_LINK_ID,
         selector: `#${USERS_INVITE_LINK_ID}`,
-        title: 'Invite New Users',
+        title: t('Invite New Users'),
         content: (
             <Typography.Paragraph>
                 <p>
@@ -73,7 +74,7 @@ export const UsersOnboardingConfig: OnboardingStep[] = [
     {
         id: USERS_ASSIGN_ROLE_ID,
         selector: `#${USERS_ASSIGN_ROLE_ID}`,
-        title: 'Assigning Roles',
+        title: t('Assigning Roles'),
         content: (
             <Typography.Paragraph>
                 <p>

@@ -1,5 +1,6 @@
 import { Modal, message } from 'antd';
 import React, { useState } from 'react';
+import { t } from '@src/i18n/utils';
 
 import { UpdateDeprecationModal } from '@app/entityV2/shared/EntityDropdown/UpdateDeprecationModal';
 import ActionDropdown from '@app/entityV2/shared/components/styled/search/action/ActionDropdown';
@@ -50,13 +51,13 @@ export default function DeprecationDropdown({ urns, disabled = false, refetch }:
                 name="Deprecation"
                 actions={[
                     {
-                        title: 'Mark as deprecated',
+                        title: t('Mark as deprecated'),
                         onClick: () => {
                             setIsEditModalVisible(true);
                         },
                     },
                     {
-                        title: 'Mark as un-deprecated',
+                        title: t('Mark as un-deprecated'),
                         onClick: () => {
                             Modal.confirm({
                                 title: `Confirm Mark as un-deprecated`,

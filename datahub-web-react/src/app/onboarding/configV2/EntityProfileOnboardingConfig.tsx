@@ -2,6 +2,7 @@ import { Typography } from 'antd';
 import React from 'react';
 
 import { OnboardingStep } from '@app/onboarding/OnboardingStep';
+import { t } from '@src/i18n/utils';
 
 export const ENTITY_PROFILE_V2_COLUMNS_ID = 'entity-profile-v2-columns';
 export const ENTITY_PROFILE_V2_CONTENTS_ID = 'entity-profile-v2-contents';
@@ -20,7 +21,7 @@ const EntityProfileOnboardingConfig: OnboardingStep[] = [
     {
         id: ENTITY_PROFILE_V2_COLUMNS_ID,
         selector: `[id^='rc-tabs'][id$='Columns']`,
-        title: 'Columns 🧮',
+        title: t('Columns 🧮'),
         content: (
             <Typography.Paragraph>
                 <p>
@@ -37,7 +38,7 @@ const EntityProfileOnboardingConfig: OnboardingStep[] = [
     {
         id: ENTITY_PROFILE_V2_CONTENTS_ID,
         selector: `[id^='rc-tabs'][id$='Contents']`,
-        title: 'Contents 📦',
+        title: t('Contents 📦'),
         content: (
             <Typography.Paragraph>
                 <p>
@@ -50,7 +51,7 @@ const EntityProfileOnboardingConfig: OnboardingStep[] = [
     {
         id: ENTITY_PROFILE_V2_DOCUMENTATION_ID,
         selector: `[id^='rc-tabs'][id$='Documentation']`,
-        title: 'Documentation 📖',
+        title: t('Documentation 📖'),
         content: (
             <Typography.Paragraph>
                 <p>
@@ -66,7 +67,7 @@ const EntityProfileOnboardingConfig: OnboardingStep[] = [
     {
         id: ENTITY_PROFILE_V2_SIDEBAR_ID,
         selector: `#${ENTITY_PROFILE_V2_SIDEBAR_ID}`,
-        title: 'Introducing the Asset Sidebar',
+        title: t('Introducing the Asset Sidebar'),
         content: (
             <Typography.Paragraph>
                 <p>
@@ -80,7 +81,7 @@ const EntityProfileOnboardingConfig: OnboardingStep[] = [
     {
         id: ENTITY_SIDEBAR_V2_ABOUT_TAB_ID,
         selector: `[id^='entity-sidebar-tabs'][id$='About']`,
-        title: 'Summary',
+        title: t('Summary'),
         content: (
             <Typography.Paragraph>
                 <p>Quick access to at-a-glance information about the asset.</p>
@@ -90,7 +91,7 @@ const EntityProfileOnboardingConfig: OnboardingStep[] = [
     {
         id: ENTITY_SIDEBAR_V2_COLUMNS_TAB_ID,
         selector: `[id^='entity-sidebar-tabs'][id$='Columns']`,
-        title: 'Columns',
+        title: t('Columns'),
         content: (
             <Typography.Paragraph>
                 <p>
@@ -102,7 +103,7 @@ const EntityProfileOnboardingConfig: OnboardingStep[] = [
     {
         id: ENTITY_SIDEBAR_V2_LINEAGE_TAB_ID,
         selector: `[id^='entity-sidebar-tabs'][id$='Lineage']`,
-        title: 'Lineage 🕸️',
+        title: t('Lineage 🕸️'),
         content: (
             <Typography.Paragraph>
                 <p>Quick access to upstream and downstream lineage, both direct and indirect.</p>
@@ -112,7 +113,7 @@ const EntityProfileOnboardingConfig: OnboardingStep[] = [
     {
         id: ENTITY_SIDEBAR_V2_PROPERTIES_ID,
         selector: `[id^='entity-sidebar-tabs'][id$='Properties']`,
-        title: 'Properties 📑',
+        title: t('Properties 📑'),
         content: (
             <Typography.Paragraph>
                 <p>
@@ -129,7 +130,7 @@ const EntityProfileOnboardingConfig: OnboardingStep[] = [
     {
         id: ENTITY_PROFILE_V2_QUERIES_ID,
         selector: `[id^='rc-tabs'][id$='Queries']`,
-        title: 'Queries 🖥️',
+        title: t('Queries 🖥️'),
         content: (
             <Typography.Paragraph>
                 <p>
@@ -143,7 +144,7 @@ const EntityProfileOnboardingConfig: OnboardingStep[] = [
     {
         id: ENTITY_PROFILE_V2_VALIDATION_ID,
         selector: `[id^='rc-tabs'][id$='Quality']`,
-        title: 'Quality ✔️ ',
+        title: t('Quality ✔️ '),
         content: (
             <Typography.Paragraph>
                 <p>
@@ -158,7 +159,7 @@ const EntityProfileOnboardingConfig: OnboardingStep[] = [
     {
         id: ENTITY_PROFILE_V2_INCIDENTS_ID,
         selector: `[id^='rc-tabs'][id$='Incidents']`,
-        title: 'Incidents ⚠️',
+        title: t('Incidents ⚠️'),
         content: (
             <Typography.Paragraph>
                 <p>

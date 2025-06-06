@@ -1,12 +1,13 @@
 import { computeLines } from '@app/analyticsDashboard/components/TimeSeriesChart';
 
 import { DateInterval, TimeSeriesChart } from '@types';
+import { t } from '@src/i18n/utils';
 
 describe('timeSeriesChart', () => {
     describe('computeLines', () => {
         it('compute lines works works correctly for weekly case', () => {
             const chartData: TimeSeriesChart = {
-                title: 'Weekly Active Users',
+                title: t('Weekly Active Users'),
                 lines: [
                     {
                         name: 'total',
@@ -38,7 +39,7 @@ describe('timeSeriesChart', () => {
 
         it('compute lines works works correctly for monthly case', () => {
             const chartData: TimeSeriesChart = {
-                title: 'Weekly Active Users',
+                title: t('Weekly Active Users'),
                 lines: [
                     {
                         name: 'total',
