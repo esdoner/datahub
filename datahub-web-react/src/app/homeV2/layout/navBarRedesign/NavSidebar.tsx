@@ -11,6 +11,7 @@ import {
     TrendUp,
     UserCircle,
     FolderUser,
+    GlobeHemisphereWest
 } from '@phosphor-icons/react';
 import React, { useContext, useEffect } from 'react';
 import styled, { useTheme } from 'styled-components';
@@ -40,6 +41,7 @@ import { EntityType } from '@src/types.generated';
 import { t } from '@src/i18n/utils';
 
 import AcrylIcon from '@images/acryl-light-mark.svg?react';
+import useSearchViewAll from "@app/searchV2/useSearchViewAll";
 
 const Container = styled.div`
     height: 100vh;
@@ -91,6 +93,7 @@ export const NavSidebar = () => {
     const { showOnboardingTour } = useHandleOnboardingTour();
     const { config } = useAppConfig();
     const logout = useGetLogoutHandler();
+    const searchViewAll = useSearchViewAll();
 
     const showAnalytics = (config?.analyticsConfig?.enabled && me && me?.platformPrivileges?.viewAnalytics) || false;
     const showStructuredProperties =
@@ -138,6 +141,14 @@ export const NavSidebar = () => {
                 key: 'workspace',
                 link: PageRoutes.WORKSPACE,
                 onlyExactPathMapping: true,
+            },
+            {
+                type: NavBarMenuItemTypes.Item,
+                title: t('View all'),
+                icon: <GlobeHemisphereWest />,
+                selectedIcon: <GlobeHemisphereWest weight="fill" />,
+                key: 'view-all',
+                onClick: searchViewAll,
             },
             {
                 type: NavBarMenuItemTypes.Group,

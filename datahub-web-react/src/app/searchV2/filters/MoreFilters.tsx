@@ -14,6 +14,8 @@ import { useAppConfig } from '@src/app/useAppConfig';
 
 import { FacetFilterInput, FacetMetadata } from '@types';
 
+import { t } from '@i18n/utils';
+
 const DropdownMenu = styled.div<{ padding?: string }>`
     background-color: white;
     border-radius: 5px;
@@ -79,7 +81,7 @@ export default function MoreFilters({ filters, filterPredicates, activeFilters, 
             onOpenChange={onOpenChange}
         >
             <SearchFilterLabel data-testid="more-filters-dropdown" $isActive={!!numActiveFilters}>
-                More {numActiveFilters ? `(${numActiveFilters}) ` : ''}
+                { t('More') } {numActiveFilters ? `(${numActiveFilters}) ` : ''}
                 <CaretDownFilled style={{ fontSize: '12px', height: '12px' }} />
             </SearchFilterLabel>
         </Dropdown>

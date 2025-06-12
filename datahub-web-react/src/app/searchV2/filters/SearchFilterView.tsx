@@ -7,6 +7,8 @@ import { FilterPredicate, FilterValue } from '@app/searchV2/filters/types';
 import ValueSelector from '@app/searchV2/filters/value/ValueSelector';
 import { AggregationMetadata, FacetFilterInput } from '@src/types.generated';
 
+import { t } from '@i18n/utils';
+
 export const IconWrapper = styled.div`
     margin-right: 8px;
     display: flex;
@@ -51,7 +53,7 @@ export default function SearchFilterView({
                 data-testid={`filter-dropdown-${displayName?.replace(/\s/g, '-')}`}
             >
                 {filterIcon && <IconWrapper>{filterIcon}</IconWrapper>}
-                {displayName} {numActiveFilters ? `(${numActiveFilters}) ` : ''}
+                { t(displayName) } {numActiveFilters ? `(${numActiveFilters}) ` : ''}
                 <CaretDownFilled style={{ fontSize: '12px', height: '12px' }} />
             </SearchFilterLabel>
         </ValueSelector>

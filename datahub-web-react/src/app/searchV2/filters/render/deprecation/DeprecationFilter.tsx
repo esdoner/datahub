@@ -7,6 +7,8 @@ import { FilterScenarioType } from '@app/searchV2/filters/render/types';
 
 import { FacetFilter, FacetFilterInput, FacetMetadata } from '@types';
 
+import { t } from '@i18n/utils';
+
 export interface Props {
     scenario: FilterScenarioType;
     filter: FacetMetadata;
@@ -38,7 +40,7 @@ export function DeprecationFilter({ icon, scenario, filter, activeFilters, onCha
         <>
             {scenario === FilterScenarioType.SEARCH_V1 && (
                 <BooleanSimpleSearchFilter
-                    title="Deprecation"
+                    title={ t("Deprecation") }
                     option="Is Deprecated"
                     isSelected={isSelected || false}
                     onSelect={toggleFilter}
@@ -49,7 +51,7 @@ export function DeprecationFilter({ icon, scenario, filter, activeFilters, onCha
             {scenario === FilterScenarioType.SEARCH_V2_PRIMARY && (
                 <BooleanSearchFilter
                     icon={icon}
-                    title="Deprecation"
+                    title={ t("Deprecation") }
                     option="Is Deprecated"
                     initialSelected={isSelected || false}
                     onUpdate={toggleFilter}
@@ -59,7 +61,7 @@ export function DeprecationFilter({ icon, scenario, filter, activeFilters, onCha
             {scenario === FilterScenarioType.SEARCH_V2_SECONDARY && (
                 <BooleanMoreFilter
                     icon={icon}
-                    title="Deprecation"
+                    title={ t("Deprecation") }
                     option="Is Deprecated"
                     initialSelected={isSelected || false}
                     onUpdate={toggleFilter}

@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { useNavBarContext } from '@app/homeV2/layout/navBarRedesign/NavBarContext';
 import NavBarToggler from '@app/homeV2/layout/navBarRedesign/NavBarToggler';
 
-import DatahubCoreLogo from '@images/datahub_core.svg?react';
+// import DatahubCoreLogo from '@images/datahub_core.svg?react';
 
 const Container = styled.div`
     display: flex;
@@ -38,6 +38,21 @@ const Logotype = styled.div`
     }
 `;
 
+const StyledTitle = styled.div`
+    display: flex;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    color: #6c6c6c;
+    white-space: nowrap;
+    height: 40px;
+    min-height: 40px;
+    align-items: center;
+    gap: 8px;
+    margin-left: -3px;
+    transition: padding 250ms ease-in-out;
+`;
+
 const StyledLink = styled(Link)`
     display: flex;
     height: 40px;
@@ -58,7 +73,7 @@ export default function NavBarHeader({ logotype }: Props) {
         <Container>
             <StyledLink to="/">
                 <Logotype>{logotype}</Logotype>
-                {!isCollapsed && <DatahubCoreLogo />}
+                {!isCollapsed && <StyledTitle>帆软数据资产平台</StyledTitle>}
             </StyledLink>
             {!isCollapsed && <NavBarToggler />}
         </Container>

@@ -27,6 +27,8 @@ import { useEntityRegistry } from '@app/useEntityRegistry';
 
 import { Entity, EntityType } from '@types';
 
+import { t } from '@i18n/utils';
+
 const FilterOptionWrapper = styled.div<{ addPadding?: boolean }>`
     display: flex;
     align-items: center;
@@ -185,7 +187,7 @@ export default function FilterOption({
                             )}
                             <LabelCountWrapper>
                                 <Label ellipsis={{ tooltip: label }} style={{ maxWidth: 150 }}>
-                                    {isSubTypeFilter ? capitalizeFirstLetterOnly(label as string) : label}
+                                    {t(isSubTypeFilter ? capitalizeFirstLetterOnly(label as string) : label)}
                                 </Label>
                                 {includeCount && <CountText>{getCountText()}</CountText>}
                                 {nestedOptions && nestedOptions.length > 0 && (

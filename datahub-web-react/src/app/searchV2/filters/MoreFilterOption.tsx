@@ -1,4 +1,4 @@
-import { RightOutlined } from '@ant-design/icons';
+import {EnvironmentFilled, RightOutlined} from '@ant-design/icons';
 import React, { useRef } from 'react';
 import styled from 'styled-components';
 
@@ -10,6 +10,8 @@ import { getFilterDropdownIcon, useElementDimensions, useFilterDisplayName } fro
 import ValueSelector from '@app/searchV2/filters/value/ValueSelector';
 
 import { FacetFilterInput, FacetMetadata } from '@types';
+
+import { t } from '@i18n/utils';
 
 const IconNameWrapper = styled.span`
     display: flex;
@@ -70,8 +72,8 @@ export default function MoreFilterOption({ filter, filterPredicates, activeFilte
                 ref={labelRef}
             >
                 <IconNameWrapper>
-                    {filterIcon && <IconWrapper>{filterIcon}</IconWrapper>}
-                    {displayName} {numActiveFilters ? `(${numActiveFilters}) ` : ''}
+                    { filterIcon ? <IconWrapper>{filterIcon}</IconWrapper> : <IconWrapper><EnvironmentFilled /></IconWrapper>}
+                    { t(displayName) } {numActiveFilters ? `(${numActiveFilters}) ` : ''}
                 </IconNameWrapper>
                 <StyledRightOutlined />
             </MoreFilterOptionLabel>

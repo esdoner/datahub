@@ -34,7 +34,7 @@ export default function DataHubTitle() {
     if (!title) return null;
     return (
         <Helmet>
-            <title>{title}</title>
+            <title>帆软数据资产平台</title>
         </Helmet>
     );
 }

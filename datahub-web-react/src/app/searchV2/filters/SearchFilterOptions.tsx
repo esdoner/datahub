@@ -19,6 +19,8 @@ import { useAppConfig } from '@src/app/useAppConfig';
 
 import { FacetFilterInput, FacetMetadata } from '@types';
 
+import { t } from '@i18n/utils';
+
 const NUM_VISIBLE_FILTER_DROPDOWNS = 6;
 
 const FiltersText = styled.div`
@@ -124,7 +126,7 @@ export default function SearchFilterOptions({
             <FlexWrapper>
                 <FiltersText>
                     <StyledSlidersOutlined />
-                    Filters
+                    { t('Filters') }
                 </FiltersText>
                 <VerticalDivider type="vertical" />
                 {loading && !visibleFilters?.length && <SearchFiltersLoadingSection />}
