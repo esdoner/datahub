@@ -6,7 +6,7 @@ import { onError } from '@apollo/client/link/error';
 import Cookies from 'js-cookie';
 import React from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import { BrowserRouter as Router } from 'react-router-dom';
+import {BrowserRouter as Router, useLocation} from 'react-router-dom';
 
 import { Routes } from '@app/Routes';
 import { isLoggedInVar } from '@app/auth/checkAuthStatus';
@@ -17,6 +17,7 @@ import { GlobalCfg } from '@src/conf';
 import { useCustomTheme } from '@src/customThemeContext';
 import possibleTypesResult from '@src/possibleTypes.generated';
 import { getRuntimeBasePath, removeRuntimePath, resolveRuntimePath } from '@utils/runtimeBasePath';
+import {autoTranslateService} from "@i18n/auto-translate.service";
 
 /*
     Construct Apollo Client
@@ -81,7 +82,30 @@ const client = new ApolloClient({
     },
 });
 
+const RouteChangeListener: React.VFC = () => {
+    const location = useLocation();
+
+    React.useEffect(() => {
+        const timer = setTimeout(() => {
+            autoTranslateService.translatePage();
+        }, 300);
+
+        return () => clearTimeout(timer);
+    }, [location]);
+
+    return null;
+};
+
 export const InnerApp: React.VFC = () => {
+    React.useEffect(() => {
+        // 确保必要的资源加载完成后再执行翻译
+        autoTranslateService.translatePage();
+
+        window.addEventListener('load', () => {
+            autoTranslateService.translatePage();
+        });
+    }, []);
+
     return (
         <HelmetProvider>
             <CustomThemeProvider>
@@ -89,6 +113,7 @@ export const InnerApp: React.VFC = () => {
                     <title>{useCustomTheme().theme?.content?.title}</title>
                 </Helmet>
                 <Router basename={getRuntimeBasePath()}>
+                    <RouteChangeListener />
                     <Routes />
                 </Router>
             </CustomThemeProvider>

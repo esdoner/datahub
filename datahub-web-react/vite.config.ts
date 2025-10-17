@@ -157,6 +157,7 @@ export default defineConfig(async ({ mode }) => {
                 // Root Directories
                 '@src': path.resolve(__dirname, '/src'),
                 '@app': path.resolve(__dirname, '/src/app'),
+                '@i18n': path.resolve(__dirname, '/src/i18n'),
                 '@conf': path.resolve(__dirname, '/src/conf'),
                 '@components': path.resolve(__dirname, 'src/alchemy-components'),
                 '@graphql': path.resolve(__dirname, 'src/graphql'),
